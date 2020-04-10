@@ -1,21 +1,64 @@
 import React from 'react';
-
+import { Container, Grid, List, Divider, Icon, Input, Button, Header } from 'semantic-ui-react';
+import { withTracker } from 'meteor/react-meteor-data';
+import { NavLink } from 'react-router-dom';
 /** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
-class Footer extends React.Component {
+export default class Footer extends React.Component {
   render() {
-    const divStyle = { paddingTop: '15px' };
     return (
-        <footer>
-          <div style={divStyle} className="ui center aligned container">
-            <hr />
-              Department of Information and Computer Sciences <br />
-              University of Hawaii<br />
-              Honolulu, HI 96822 <br />
-            <a href="http://ics-software-engineering.github.io/meteor-application-template-react">Template Home Page</a>
-          </div>
-        </footer>
-    );
+		<div className="footer-background">
+    	<Container textAlign="center">
+	        <Grid columns={4} textAlign='center'>
+
+            <Grid.Column textAlign='left'>
+              <Header inverted>Bowride</Header>
+                <List>
+                <Divider/>
+                <List.Item>
+                  <Icon name='facebook blue' size='big'/>
+                  <Icon name='instagram orange' size='big'/>
+                  <Icon name='linkedin blue' size='big'/>
+                </List.Item>
+                </List>
+            </Grid.Column>
+                  
+            <Grid.Column textAlign='left'>
+              <Header inverted>Driver</Header>
+                <List>
+                  <List.Item as={NavLink} activeClassName="" exact to="/signup">Become a Driver</List.Item>
+                  <List.Item as='a'>Why Bowride</List.Item>
+                  <List.Item as='a'>Safety</List.Item>
+                  <List.Item as='a'>Help</List.Item>
+                  <List.Item as={NavLink} activeClassName="" exact to="/signin">Sign in</List.Item>
+                </List>
+            </Grid.Column>
+
+            <Grid.Column textAlign='left'>
+                <Header inverted>Rider</Header>
+                <List stackable>
+                  <List.Item as={NavLink} activeClassName="" exact to="/signup">Sign up to Ride</List.Item>
+                  <List.Item as='a'>Safety</List.Item>
+                  <List.Item as='a'>Help</List.Item>
+                  <List.Item as={NavLink} activeClassName="" exact to="/signin">Sign in</List.Item>
+                </List>
+            </Grid.Column>
+
+            <Grid.Column textAlign='left'>
+              <Header inverted>Connect</Header>
+              <List>
+                <List.Item> Get updates</List.Item>
+                <List.Item>
+                  <Input placeholder="Email Address"/>
+                </List.Item>
+                <List.Item>
+                  <Button size='large' labeled color='black'> Join the Movement </Button>
+                </List.Item>
+              </List>
+                </Grid.Column>
+	        </Grid>
+			<hr/>
+	    </Container>
+	</div>
+    )
   }
 }
-
-export default Footer;
