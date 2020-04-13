@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
-
+import { Drivers } from '../../api/driver/Driver';
 /** This subscription publishes only the documents associated with the logged in user */
 Meteor.publish('Stuff', function publish() {
   if (this.userId) {
@@ -15,6 +15,16 @@ Meteor.publish('Stuff', function publish() {
 Meteor.publish('StuffAdmin', function publish() {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Stuffs.find();
+  }
+  return this.ready();
+});
+
+
+/** ---------Driver--------- */
+Meteor.publish('Driver', function publish() {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Drivers.find({ owner: username });
   }
   return this.ready();
 });
