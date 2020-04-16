@@ -15,9 +15,9 @@ export default class Footer extends React.Component {
                 <List>
                 <Divider/>
                 <List.Item>
-                  <Icon name='facebook blue' size='big'/>
-                  <Icon name='instagram orange' size='big'/>
-                  <Icon name='linkedin blue' size='big'/>
+                  <Icon className='facebook f' size='big' color='blue'/>
+                  <Icon className='instagram' size='big' color='blue'/>
+                  <Icon className='linkedin' size='big' color='blue'/>
                 </List.Item>
                 </List>
             </Grid.Column>
@@ -35,7 +35,7 @@ export default class Footer extends React.Component {
 
             <Grid.Column textAlign='left'>
                 <Header inverted>Rider</Header>
-                <List stackable>
+                <List>
                   <List.Item as={NavLink} activeClassName="" exact to="/signup">Sign up to Ride</List.Item>
                   <List.Item as='a'>Safety</List.Item>
                   <List.Item as='a'>Help</List.Item>
@@ -51,7 +51,7 @@ export default class Footer extends React.Component {
                   <Input placeholder="Email Address"/>
                 </List.Item>
                 <List.Item>
-                  <Button size='large' labeled color='black'> Join the Movement </Button>
+                  <Button size='large' color='black'> Join the Movement </Button>
                 </List.Item>
               </List>
                 </Grid.Column>
