@@ -29,7 +29,7 @@ class AddDriverInfo extends React.Component {
     let fRef = null;
     return (
         <Grid container centered>
-          <Grid.Column>
+          <Grid.Column mobile={16} tablet={8} computer={8}>
             <Header as="h2" textAlign="center">Personal information and car details</Header>
             <Header disabled as = 'h4' textAlign="center">Only name and car make are visible before booking</Header>
             <AutoForm size='small' ref={ref => { fRef = ref; }} schema={DriverSchema} onSubmit={data => this.submit(data, fRef)} >
