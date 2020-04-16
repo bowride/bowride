@@ -1,32 +1,30 @@
 import { Meteor } from 'meteor/meteor';
-import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Drivers } from '../../api/driver/Driver.js';
+import { Contacts } from '../../api/contact/Contacts';
 
 /* eslint-disable no-console */
 
-/** Initialize the database with a default data document. */
-function addData(data) {
-  console.log(`  Adding: ${data.name} (${data.owner})`);
-  Stuffs.insert(data);
-}
-
-function addDriver(data) {
-  console.log(`  Adding: ${data.firstName} in a ${data.color} ${data.carMake}, (${data.owner})`);
-  Drivers.insert(data);
+function addContact(data) {
+  console.log(`  Adding: ${data.lastName} (${data.owner})`);
+  Contacts.insert(data);
 }
 
 /** Initialize the collection if empty. */
-if (Stuffs.find().count() === 0) {
-  if (Meteor.settings.defaultData) {
+if (Contacts.find().count() === 0) {
+  if (Meteor.settings.defaultContacts) {
     console.log('Creating default data.');
-    Meteor.settings.defaultData.map(data => addData(data));
+    Meteor.settings.defaultContacts.map(data => addContact(data));
   }
-}
 
+  function addDriver(data) {
+    console.log(`  Adding: ${data.firstName} in a ${data.color} ${data.carMake}, (${data.owner})`);
+    Drivers.insert(data);
+  }
 
-if (Drivers.find().count() === 0) {
-  if (Meteor.settings.defaultDriver) {
-    console.log('Creating default Driver.');
-    Meteor.settings.defaultDriver.map(data => addDriver(data));
+  if (Drivers.find().count() === 0) {
+    if (Meteor.settings.defaultDriver) {
+      console.log('Creating default Driver.');
+      Meteor.settings.defaultDriver.map(data => addDriver(data));
+    }
   }
 }
