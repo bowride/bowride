@@ -2,7 +2,6 @@ import React from 'react';
 import { Card, Confirm } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
-import { Drivers } from '../../api/driver/Driver';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Driver extends React.Component {
@@ -12,13 +11,13 @@ class Driver extends React.Component {
     this.props.driver.remove(docID);
   }
 
-  state = { open: false }
+  state = { open: false };
 
-  open = () => this.setState({ open: true })
+  open = () => this.setState({ open: true });
 
-  close = () => this.setState({ open: false })
+  close = () => this.setState({ open: false });
 
-  delete = () => this.removeItem(this.props.driver._id)
+  delete = () => this.removeItem(this.props.driver._id);
 
   render() {
     return (
