@@ -9,11 +9,7 @@ import Driver from '../components/Driver';
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class MyProfile extends React.Component {
 
-  drivers = [{
-    firstName: 'Jake', lastName: 'Hijirida',
-    carMake: 'Honda', color: 'white', carYear: 2020, licencsePlate:'asdf',
-  },
-  ];
+
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   /*render() {

@@ -12,7 +12,7 @@ function addData(data) {
 
 function addDriver(data) {
   console.log(`  Adding: ${data.firstName} in a ${data.color} ${data.carMake}, (${data.owner})`);
-  Driver.insert(data);
+  Drivers.insert(data);
 }
 
 /** Initialize the collection if empty. */

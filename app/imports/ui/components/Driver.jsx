@@ -2,13 +2,14 @@ import React from 'react';
 import { Card, Confirm } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
+import { Drivers } from '../../api/driver/Driver';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Driver extends React.Component {
 
   removeItem(docID) {
     console.log(`item to delete is: ${docID}`);
-    this.props.Drivers.remove(docID);
+    this.props.driver.remove(docID);
   }
 
   state = { open: false }
@@ -26,6 +27,7 @@ class Driver extends React.Component {
             <Card.Header>{this.props.driver.firstName} {this.props.driver.lastName}</Card.Header>
             <Card.Meta>{this.props.driver.carMake}</Card.Meta>
             <Card.Meta>{this.props.driver.carYear}</Card.Meta>
+            <Card.Meta>{this.props.driver.licensePlate}</Card.Meta>
           </Card.Content>
           <Card.Content extra>
             <Link to={`/edit/${this.props.driver._id}`}>Edit</Link>
