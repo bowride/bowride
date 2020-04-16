@@ -18,6 +18,7 @@ import AddContacts from '../pages/AddContacts';
 import EditContacts from '../pages/EditContact';
 import ListContactsAdmin from '../pages/ListContactsAdmin';
 import AddDriverInfo from '../pages/AddDriverInfo';
+import MyProfile from '../pages/MyProfile';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -35,6 +36,7 @@ class App extends React.Component {
               <ProtectedRoute path="/edit/:_id" component={EditContacts}/>
               <AdminProtectedRoute path="/admin" component={ListContactsAdmin}/>
               <ProtectedRoute path="/add_driverinfo" component={Driver_Profile}/>
+              <ProtectedRoute path="/profile" component={MyProfile}/>
               <ProtectedRoute path="/addDriver" component={AddDriverInfo}/>
               <ProtectedRoute path="/map" component={GoogleMaps}/>
               <ProtectedRoute path="/signout" component={Signout}/>

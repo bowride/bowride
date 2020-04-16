@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid, List, Divider, Icon, Input, Button, Header } from 'semantic-ui-react';
+import {Grid, List, Divider, Icon, Input, Button, Header } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import { NavLink } from 'react-router-dom';
 /** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
