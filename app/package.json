@@ -1,5 +1,5 @@
 {
-  "name": "meteor-application-template-react",
+  "name": "bow-rides",
   "private": true,
   "dependencies": {
     "@babel/runtime": "^7.8.3",
@@ -19,7 +19,8 @@
     "sweetalert": "^2.1.2",
     "uniforms": "^2.6.5",
     "uniforms-bridge-simple-schema-2": "^2.6.5",
-    "uniforms-semantic": "^2.6.5"
+    "uniforms-semantic": "^2.6.5",
+    "react-google-maps": "^9.4.5"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
