@@ -12,7 +12,7 @@ class GoogleMaps extends React.Component {
 
   render() {
     return (
-        <div className="ui container" style={{ width: '70vw', height: '50vh', margin:'50px' }}>
+        <div className="ui container" style={{ width: '70vw', height: '70vh', margin:'50px' }}>
           <WrappedMap googleMapURL={'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyCeFS8T27RlCxMzV641cxQmBLh0nDo4fIA'}
                       loadingElement={<div style={{ height: `100%` }}/>}
                       containerElement={<div style={{ height: `100%` }}/>}
@@ -25,7 +25,7 @@ class GoogleMaps extends React.Component {
 
 function Map() {
   return <GoogleMap
-      defaultZoom={15}
+      defaultZoom={17}
       defaultCenter={{lat:21.297274,lng:-157.817359} }
   />;
 }
