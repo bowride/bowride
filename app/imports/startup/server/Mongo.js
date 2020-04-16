@@ -12,7 +12,7 @@ function addData(data) {
 
 function addDriver(data) {
   console.log(`  Adding: ${data.firstName} in a ${data.color} ${data.carMake}, (${data.owner})`);
-  Driver.insert(data);
+  Drivers.insert(data);
 }
 
 /** Initialize the collection if empty. */
@@ -22,6 +22,7 @@ if (Stuffs.find().count() === 0) {
     Meteor.settings.defaultData.map(data => addData(data));
   }
 }
+
 
 if (Drivers.find().count() === 0) {
   if (Meteor.settings.defaultDriver) {

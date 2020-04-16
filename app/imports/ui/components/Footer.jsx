@@ -7,18 +7,22 @@ export default class Footer extends React.Component {
   render() {
     return (
 		<div className="footer-background">
-	        <Grid Container padded divided stackable columns={4} textAlign='center'>
-            <Grid.Column textAlign='center' mobile={16} tablet={8} computer={5}>
+    	<Container textAlign="center">
+	        <Grid columns={4} textAlign='center'>
+
+            <Grid.Column textAlign='left'>
               <Header inverted>Bowride</Header>
                 <List>
                 <Divider/>
-                <Icon name='facebook f' size='big' color='blue'/>
-                <Icon name='instagram' size='big' color='orange'/>
-                <Icon name='linkedin' size='big' color='blue'/>
+                <List.Item>
+                  <Icon name='facebook blue' size='big'/>
+                  <Icon name='instagram orange' size='big'/>
+                  <Icon name='linkedin blue' size='big'/>
+                </List.Item>
                 </List>
             </Grid.Column>
                   
-            <Grid.Column textAlign='center' mobile={16} tablet={8} computer={3}>
+            <Grid.Column textAlign='left'>
               <Header inverted>Driver</Header>
                 <List>
                   <List.Item as={NavLink} activeClassName="" exact to="/signup">Become a Driver</List.Item>
@@ -29,7 +33,7 @@ export default class Footer extends React.Component {
                 </List>
             </Grid.Column>
 
-            <Grid.Column textAlign='center' mobile={16} tablet={8} computer={3}>
+            <Grid.Column textAlign='left'>
                 <Header inverted>Rider</Header>
                 <List stackable>
                   <List.Item as={NavLink} activeClassName="" exact to="/signup">Sign up to Ride</List.Item>
@@ -39,7 +43,7 @@ export default class Footer extends React.Component {
                 </List>
             </Grid.Column>
 
-            <Grid.Column textAlign='center' mobile={16} tablet={8} computer={5}>
+            <Grid.Column textAlign='left'>
               <Header inverted>Connect</Header>
               <List>
                 <List.Item> Get updates</List.Item>
@@ -47,12 +51,13 @@ export default class Footer extends React.Component {
                   <Input placeholder="Email Address"/>
                 </List.Item>
                 <List.Item>
-                  <Button labeled color='black'> Join the Movement </Button>
+                  <Button size='large' labeled color='black'> Join the Movement </Button>
                 </List.Item>
               </List>
                 </Grid.Column>
 	        </Grid>
 			<hr/>
+	    </Container>
 	</div>
     )
   }
