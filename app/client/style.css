@@ -4,6 +4,10 @@
   color: white;
   box-shadow: none;
   border: none;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 p {
   font-size: large;
@@ -11,5 +15,5 @@ p {
 #root{
   height: 100vh!important;
   alignment: center;
-
+background-color: limegreen;
 }
