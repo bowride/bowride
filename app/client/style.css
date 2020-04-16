@@ -1,8 +1,20 @@
 .footer-background {
     background-color: rgb(36, 221, 92);
-    height:fit-content;
+    height: 100vh!important;
     color: white;
     margin: 5em 0em 0em;
-    padding: 5em 0em; 
-    position:bottom;
+    padding: 5em 0em;
+    box-shadow: none;
+    border: none;
   }
+p {
+  font-size: large;
+}
+#root{
+    height: 100vh!important;
+  }
+
+.center.aligned.five.wide.computer.sixteen.mobile.eight.tablet.column{
+  box-shadow: none;
+  border: none;
+}
