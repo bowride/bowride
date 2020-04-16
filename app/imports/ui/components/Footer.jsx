@@ -8,7 +8,7 @@ export default class Footer extends React.Component {
     return (
 		<div className="footer-background">
 	        <Grid Container padded divided stackable columns={4} textAlign='center'>
-            <Grid.Column textAlign='left' mobile={16} tablet={8} computer={5}>
+            <Grid.Column textAlign='center' mobile={16} tablet={8} computer={5}>
               <Header inverted>Bowride</Header>
                 <List>
                 <Divider/>
@@ -18,7 +18,7 @@ export default class Footer extends React.Component {
                 </List>
             </Grid.Column>
                   
-            <Grid.Column textAlign='left' mobile={16} tablet={8} computer={3}>
+            <Grid.Column textAlign='center' mobile={16} tablet={8} computer={3}>
               <Header inverted>Driver</Header>
                 <List>
                   <List.Item as={NavLink} activeClassName="" exact to="/signup">Become a Driver</List.Item>
@@ -29,7 +29,7 @@ export default class Footer extends React.Component {
                 </List>
             </Grid.Column>
 
-            <Grid.Column textAlign='left' mobile={16} tablet={8} computer={3}>
+            <Grid.Column textAlign='center' mobile={16} tablet={8} computer={3}>
                 <Header inverted>Rider</Header>
                 <List stackable>
                   <List.Item as={NavLink} activeClassName="" exact to="/signup">Sign up to Ride</List.Item>
@@ -39,7 +39,7 @@ export default class Footer extends React.Component {
                 </List>
             </Grid.Column>
 
-            <Grid.Column textAlign='left' mobile={16} tablet={8} computer={5}>
+            <Grid.Column textAlign='center' mobile={16} tablet={8} computer={5}>
               <Header inverted>Connect</Header>
               <List>
                 <List.Item> Get updates</List.Item>
