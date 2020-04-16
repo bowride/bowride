@@ -24,7 +24,7 @@ class MyProfile extends React.Component {
           <Card.Group>
             {this.props.drivers.map((driver, index) => <Driver
                 key={index}
-                driver={driver}/>)}
+                driver={Driver}/>)}
           </Card.Group>
         </Container>
     );

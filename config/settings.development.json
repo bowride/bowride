@@ -10,6 +10,7 @@
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
   ],
+
   "defaultDriver": [
   {"firstName": "Jake", "lastName": "Hijirida", "carMake": "Honda", "color": "white", "carYear": "2020", "licensePlate":"asdf", "owner": "admin@foo.com"}
 

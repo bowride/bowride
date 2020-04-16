@@ -23,6 +23,7 @@ if (Stuffs.find().count() === 0) {
   }
 }
 
+
 if (Drivers.find().count() === 0) {
   if (Meteor.settings.defaultDriver) {
     console.log('Creating default Driver.');
