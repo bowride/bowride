@@ -1,7 +1,9 @@
 import React from 'react';
-import { Card, Confirm } from 'semantic-ui-react';
+import { Card, Confirm, Feed } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
+import Note from './Notes';
+import AddNotes from './AddNotes';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Driver extends React.Component {
@@ -19,6 +21,7 @@ class Driver extends React.Component {
 
   delete = () => this.removeItem(this.props.driver._id);
 
+
   render() {
     return (
         <Card centered>
@@ -30,6 +33,14 @@ class Driver extends React.Component {
           </Card.Content>
           <Card.Content extra>
             <Link to={`/edit/${this.props.driver._id}`}>Edit</Link>
+          </Card.Content>
+          <Card.Content extra>
+            <Feed>
+              {this.props.notes.map((note, index) => <Note key={index} note={note}/>)}
+            </Feed>
+          </Card.Content>
+          <Card.Content extra>
+            <AddNotes owner={this.props.driver.owner} driverId={this.props.driver._id}/>
           </Card.Content>
           <Card.Content extra>
             <button className="ui button" onClick={this.open}>Delete</button>

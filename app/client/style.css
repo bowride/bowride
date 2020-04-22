@@ -2,10 +2,10 @@
   background-color: rgb(36, 221, 92);
   height: 30vh!important;
   color: white;
+  margin-top: 10px;
   box-shadow: none;
   border: none;
   overflow: hidden;
-  position: fixed;
   bottom: 0;
   width: 100%;
 }
