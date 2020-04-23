@@ -1,6 +1,6 @@
 .footer-background {
   background-color: rgb(36, 221, 92);
-  height: 30vh!important;
+  height: 20vh!important;
   color: white;
   box-shadow: none;
   border: none;
@@ -8,6 +8,7 @@
   position: fixed;
   bottom: 0;
   width: 100%;
+  padding-top: 50px;
 }
 p {
   font-size: large;
