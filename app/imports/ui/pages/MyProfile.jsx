@@ -5,7 +5,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Driver from '../components/Driver';
 import { Drivers } from '../../api/driver/Driver';
-import { Note } from '../../api/note/Note';
+import { Review } from '../../api/Review/Review';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class MyProfile extends React.Component {
@@ -22,7 +22,7 @@ class MyProfile extends React.Component {
         <Card.Group>
           {this.props.drivers.map((driver, index) => <Driver key={index} driver={driver}
                                                                 Driver={Drivers}
-                       notes={this.props.notes.filter(note => (note.driverId === driver._id))}/>)}
+                       reviews={this.props.reviews.filter(review => (review.driverId === driver._id))}/>)}
         </Card.Group>
         </Container>
     );
@@ -32,7 +32,7 @@ class MyProfile extends React.Component {
 /** Require an array of Stuff documents in the props. */
 MyProfile.propTypes = {
   drivers: PropTypes.array.isRequired,
-  notes: PropTypes.array.isRequired,
+  reviews: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -40,10 +40,10 @@ MyProfile.propTypes = {
 export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe('Drivers');
-  const subscription2 = Meteor.subscribe('Notes');
+  const subscription2 = Meteor.subscribe('Reviews');
   return {
     drivers: Drivers.find({}).fetch(),
-    notes: Note.find({}).fetch(),
+    reviews: Review.find({}).fetch(),
     ready: subscription.ready() && subscription2.ready(),
   };
 })(MyProfile);
