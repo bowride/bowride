@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
-import { Menu, Dropdown, Header, Image } from 'semantic-ui-react';
+import { Menu, Dropdown, Header, Image , Icon} from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
@@ -16,8 +16,7 @@ class NavBar extends React.Component {
             <Header inverted as='h1'><Image size='massive' centered src="/images/bowride-logo.png"/>BowRide</Header>
           </Menu.Item>
           {this.props.currentUser ? (
-              [<Menu.Item as={NavLink} activeClassName="active" exact to="/addContacts" key='addContacts'>Add Contacts</Menu.Item>,
-                <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>List Contacts</Menu.Item>,
+              [<Menu.Item as={NavLink} activeClassName="active" exact to="/listDrivers" key='addContacts'><Icon name='car notch' size='large' color = ''/></Menu.Item>,
                 <Menu.Item as={NavLink} activeClassName="active" exact to="/map" key='map'>Google Maps</Menu.Item>,
                 <Menu.Item as={NavLink} activeClassName="" exact to="/add_driverinfo" key='add'>Driver Info</Menu.Item>,
                 <Menu.Item as={NavLink} activeClassName="" exact to="/profile" key='profile'>Profile</Menu.Item>]
