@@ -32,7 +32,7 @@ export default class SimpleMap extends Component{
           <Marker
               lat={21.298872}
               lng={-157.817204}
-              text={'Pick Up Location'}
+              text={'Pick-Up Location'}
           />
         </GoogleMapReact>
         </div>
