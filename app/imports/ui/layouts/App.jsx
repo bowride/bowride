@@ -14,6 +14,7 @@ import Signout from '../pages/Signout';
 import Driver_Profile from '../pages/AddDriverInfo';
 import GoogleMaps from '../pages/GoogleMaps';
 import ListContacts from '../pages/ListContacts';
+import ListDrivers from '../pages/ListDrivers';
 import AddContacts from '../pages/AddContacts';
 import EditContacts from '../pages/EditContact';
 import ListContactsAdmin from '../pages/ListContactsAdmin';
@@ -36,6 +37,7 @@ class App extends React.Component {
               <ProtectedRoute path="/edit/:_id" component={EditContacts}/>
               <AdminProtectedRoute path="/admin" component={ListContactsAdmin}/>
               <ProtectedRoute path="/add_driverinfo" component={Driver_Profile}/>
+              <ProtectedRoute path="/listDrivers" component={ListDrivers}/>
               <ProtectedRoute path="/profile" component={MyProfile}/>
               <ProtectedRoute path="/addDriver" component={AddDriverInfo}/>
               <ProtectedRoute path="/map" component={GoogleMaps}/>

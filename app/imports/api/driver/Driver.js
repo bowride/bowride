@@ -19,6 +19,12 @@ const DriverSchema = new SimpleSchema({
       defaultValue: 'None',
       required: true,
     },
+    carType:{
+        type:String,
+        allowedValues: ['sedan','suv','van','coupe','hatchback','pickup'],
+        defaultValue:'None',
+        required: true,
+    },
     licensePlate: String,
     color: {
         type: String,

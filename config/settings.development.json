@@ -67,6 +67,7 @@
       "firstName": "Jake",
       "lastName": "Hijirida",
       "carMake": "Honda",
+      "carType": "sedan",
       "color": "white",
       "carYear": "2020",
       "licensePlate": "asdf",

@@ -25,6 +25,7 @@ class Driver extends React.Component {
           <Card.Content>
             <Card.Header>{this.props.driver.firstName} {this.props.driver.lastName}</Card.Header>
             <Card.Meta>{this.props.driver.carMake}</Card.Meta>
+            <Card.Meta>{this.props.driver.carType}</Card.Meta>
             <Card.Meta>{this.props.driver.carYear}</Card.Meta>
             <Card.Meta>{this.props.driver.licensePlate}</Card.Meta>
           </Card.Content>
@@ -46,8 +47,7 @@ class Driver extends React.Component {
 
 /** Require a document to be passed to this component. */
 Driver.propTypes = {
-  driver: PropTypes.object.isRequired,
-  Contacts: PropTypes.object.isRequired,
+  driver: PropTypes.array.isRequired,
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */

@@ -11,9 +11,9 @@ class AddDriverInfo extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
-    const { firstName, lastName, referralCode, carMake, licensePlate, color, carYear  } = data;
+    const { firstName, lastName, referralCode, carMake, carType, licensePlate, color, carYear  } = data;
     const owner = Meteor.user().username;
-    Drivers.insert({ firstName, lastName, referralCode, carMake, licensePlate, color, carYear, owner },
+    Drivers.insert({ firstName, lastName, referralCode, carMake, carType, licensePlate, color, carYear, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -38,6 +38,7 @@ class AddDriverInfo extends React.Component {
                 <TextField name = 'lastName'/>
                 <TextField name = 'referralCode'/>
                 <SelectField name = 'carMake'/>
+                <SelectField name = 'carType'/>
                 <TextField name = 'color'/>
                 <SelectField name='carYear'/>
                 <TextField name='licensePlate'/>
