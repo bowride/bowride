@@ -21,7 +21,8 @@
     "uniforms": "^2.6.5",
     "uniforms-bridge-simple-schema-2": "^2.6.5",
     "uniforms-semantic": "^2.6.5",
-    "recompose": "latest"
+    "recompose": "latest",
+    "google-map-react": "latest"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",

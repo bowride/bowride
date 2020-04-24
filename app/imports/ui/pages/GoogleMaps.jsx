@@ -1,35 +1,43 @@
-import React from 'react';
-import {Loader} from 'semantic-ui-react';
-import { withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps';
+import React, {Component} from 'react'
+import { Loader } from 'semantic-ui-react';
+import GoogleMapReact from 'google-map-react';
 
+const Marker = ({ text }) => (
+    <div style={{
+      color: 'white',
+      background: 'red',
+      padding: '15px 10px',
+      display: 'inline-flex',
+      textAlign: 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: '50%',
+      transform: 'translate(-50%, -50%)'
+    }}>
+      {text}
+    </div>
+);
 
-/** A simple static component to render some text for the landing page. */
-class GoogleMaps extends React.Component {
+export default class SimpleMap extends Component{
 
   render() {
-    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
-  }
-
-  renderPage() {
     return (
-        <div className="ui container" style={{ width: '70vw', height: '70vh', margin:'50px' }}>
-          <WrappedMap googleMapURL={'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyCeFS8T27RlCxMzV641cxQmBLh0nDo4fIA'}
-                      loadingElement={<div style={{ height: `100%` }}/>}
-                      containerElement={<div style={{ height: `100%` }}/>}
-                      mapElement={<div style={{ height: `100%` }}/>}
+
+        <div style={{height: '80vh', width: '80vw'}}>
+        <GoogleMapReact
+            bootstrapURLKeys={{ key: 'AIzaSyDxXxFiIPFfY3-PdFOuEa9gR4hjICcpwZA'}}
+            defaultCenter={{lat: 21.298872, lng: -157.817204}}
+            defaultZoom={ 11 }
+        >
+          <Marker
+              lat={21.298872}
+              lng={-157.817204}
+              text={'Pick Up Location'}
           />
+        </GoogleMapReact>
         </div>
     );
   }
+
 }
 
-function Map() {
-  return <GoogleMap
-      defaultZoom={17}
-      defaultCenter={{lat:21.297274,lng:-157.817359} }
-  />;
-}
-
-const WrappedMap = withScriptjs(withGoogleMap(Map));
-
-export default GoogleMaps;
