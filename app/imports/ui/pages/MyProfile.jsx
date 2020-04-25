@@ -48,7 +48,6 @@ export default withTracker(() => {
   const subscription2 = Meteor.subscribe('Reviews');
   return {
     drivers: Drivers.find({}).fetch(),
-    ready: subscription.ready(),
     reviews: Review.find({}).fetch(),
     ready: subscription.ready() && subscription2.ready(),
   };
