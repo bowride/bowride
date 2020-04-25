@@ -44,4 +44,4 @@ Meteor.publish('Reviews', function publish() {
     return Review.find({ owner: username });
   }
   return this.ready();
-});}
+});

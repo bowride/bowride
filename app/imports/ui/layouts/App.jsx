@@ -16,7 +16,7 @@ import GoogleMaps from '../pages/GoogleMaps';
 import ListContacts from '../pages/ListContacts';
 import ListDrivers from '../pages/ListDrivers';
 import AddContacts from '../pages/AddContacts';
-import EditContacts from '../pages/EditContact';
+import EditDriver from '../pages/EditDriver';
 import ListContactsAdmin from '../pages/ListContactsAdmin';
 import AddDriverInfo from '../pages/AddDriverInfo';
 import MyProfile from '../pages/MyProfile';
@@ -34,7 +34,7 @@ class App extends React.Component {
               <Route path="/signup" component={Signup}/>
               <ProtectedRoute path="/list" component={ListContacts}/>
               <ProtectedRoute path="/addContacts" component={AddContacts}/>
-              <ProtectedRoute path="/edit/:_id" component={EditContacts}/>
+              <ProtectedRoute path="/edit/:_id" component={EditDriver}/>
               <AdminProtectedRoute path="/admin" component={ListContactsAdmin}/>
               <ProtectedRoute path="/add_driverinfo" component={Driver_Profile}/>
               <ProtectedRoute path="/listDrivers" component={ListDrivers}/>

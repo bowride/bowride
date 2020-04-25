@@ -5,6 +5,7 @@
     "@babel/runtime": "^7.8.3",
     "classnames": "^2.2.6",
     "core-js": "^3.6.4",
+    "google-map-react": "^1.1.7",
     "graphql": "^14.5.8",
     "meteor-node-stubs": "^0.4.1",
     "prop-types": "^15.7.2",
@@ -21,9 +22,6 @@
     "sweetalert": "^2.1.2",
     "uniforms": "^2.6.5",
     "uniforms-bridge-simple-schema-2": "^2.6.5",
-    "uniforms-semantic": "^2.6.5",
-    "recompose": "latest",
-    "google-map-react": "latest",
     "uniforms-semantic": "^2.6.5"
   },
   "devDependencies": {
