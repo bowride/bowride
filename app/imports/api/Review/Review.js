@@ -9,7 +9,7 @@ const Review = new Mongo.Collection('Review');
 const ReviewSchema = new SimpleSchema({
   review: String,
   owner: String,
-  contactId: String,
+  driverId: String,
   createdAt: Date,
  }, { tracker: Tracker });
 /** Attach this schema to the collection. */

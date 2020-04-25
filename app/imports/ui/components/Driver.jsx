@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Confirm, Feed } from 'semantic-ui-react';
+import { Button, Card, Confirm, Feed } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 import Review from './Reviews';
@@ -10,7 +10,7 @@ class Driver extends React.Component {
 
   removeItem(docID) {
     console.log(`item to delete is: ${docID}`);
-    this.props.driver.remove(docID);
+    this.props.Drivers.remove(docID);
   }
 
   state = { open: false };
@@ -36,7 +36,7 @@ class Driver extends React.Component {
           </Card.Content>
           <Card.Content extra>
             <Feed>
-              {this.props.reviews.map((note, index) => <Review key={index} review={review}/>)}
+              {this.props.reviews.map((review, index) => <Review key={index} review={review}/>)}
             </Feed>
           </Card.Content>
           <Card.Content extra>
@@ -59,7 +59,7 @@ class Driver extends React.Component {
 Driver.propTypes = {
   driver: PropTypes.object.isRequired,
   reviews: PropTypes.array.isRequired,
-  Driver: PropTypes.array.isRequired,
+  Drivers: PropTypes.object.isRequired,
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */

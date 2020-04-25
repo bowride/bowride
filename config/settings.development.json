@@ -35,10 +35,5 @@
       "image": "https://www.ics.hawaii.edu/wp-content/uploads/2013/08/kim_binsted-square.jpg",
       "description": "Kim Binsted received her BSc in Physics at McGill (1991), and her PhD in Artificial Intelligence' +\n          'from the University of Edinburgh (1996). Her thesis topic was the computational modeling and generation of '\n          + 'punning riddles, and her program, JAPE (Joke Analysis and Production Engine), generated puns such as ' +\n          '\"What do you call a Martian who drinks beer? An ale-ien!\"."
     }
-  ],
-
-  "defaultDriver": [
-  {"firstName": "Jake", "lastName": "Hijirida", "carMake": "Honda", "color": "white", "carYear": "2020", "licensePlate":"asdf", "owner": "admin@foo.com"}
-
   ]
 }

@@ -7,7 +7,7 @@ import { Review } from '../../api/Review/Review';
 /** This subscription publishes only the documents associated with the logged in user */
 
 /** ---------Drivers--------- */
-Meteor.publish('Driver', function publish() {
+Meteor.publish('Drivers', function publish() {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
     return Drivers.find({ owner: username });

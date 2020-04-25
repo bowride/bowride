@@ -10,6 +10,11 @@ import { Review } from '../../api/Review/Review';
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class MyProfile extends React.Component {
 
+  drivers= [{
+    firstName: 'Jake', lastName: 'Hijirida', carMake: 'Honda',
+    color: 'white', carYear: 2020, licensePlate:'asdf', owner: 'admin@foo.com'
+  }
+  ];
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
@@ -21,7 +26,7 @@ class MyProfile extends React.Component {
         <Header as="h2" textAlign="center" inverted>List Contacts</Header>
         <Card.Group>
           {this.props.drivers.map((driver, index) => <Driver key={index} driver={driver}
-                                                                Driver={Drivers}
+                                                                Drivers={Drivers}
                        reviews={this.props.reviews.filter(review => (review.driverId === driver._id))}/>)}
         </Card.Group>
         </Container>
