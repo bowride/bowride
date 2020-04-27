@@ -5,31 +5,33 @@ import { Grid, Image } from 'semantic-ui-react';
 class Landing extends React.Component {
   render() {
     return (
-        <Grid verticalAlign='middle' textAlign='center'>
+        <Grid verticalAlign='middle' textAlign='center' container>
 
-          <Grid.Column>
-            <Grid.Row>
-              <Image size='large' centered src="/images/bowride-logo.png"/>
-            </Grid.Row>
-
-            <Grid.Row>
-              <h1>Bow Rides!</h1>
-            </Grid.Row>
-
-            <Grid.Row>
-              <div className="ui container" align='center'>
-              <p>Bowride is a website that will allow users to organize carpools with other members of the UH community.
-                Users can sign up to be a driver or rider,
-                and drivers can search for riders that are most convenient to/from campus.
-                These carpools can be reoccurring such as everyday classes or one-time such as for special events.
-                A rating system for both drivers and passengers prevents abuses,
-                plus a special administrator mode that enables the site admin to remove users based upon substantiated
-                complaints.</p>
-              </div>
-            </Grid.Row>
-
+          <Grid.Column width={4}>
+            <h1> BowRide</h1>
           </Grid.Column>
 
+          <Grid.Column width={8}>
+            <h3>
+              More people ride-sharing means less cars on the road!
+            </h3>
+            <p>
+              Need a lift? Contact one of our trusted drivers to help you get to your destination,
+              or willing to give a lift, BowRide is an amazing hub to find drivers and riders to interact
+              with each other to help traffic and the environment!
+            </p>
+            <h3>
+              Safety is our Main Concern
+            </h3>
+            <p>
+              We want you to feel comfortable with who you are riding with, check ratings and notes
+              on previous driver/rider experiences.
+            </p>
+          </Grid.Column>
+          <h2>
+            Find the Driver/Rider that is right for you!
+          </h2>
+          <Image fluid src="/images/rainbowroad.jpeg"/>
         </Grid>
     );
   }
