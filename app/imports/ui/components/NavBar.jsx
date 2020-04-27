@@ -18,7 +18,7 @@ class NavBar extends React.Component {
           {this.props.currentUser ? (
               [<Menu.Item as={NavLink} activeClassName="active" exact to="/listDrivers" key='addContacts'><Icon name='car notch' size='large' color = ''/></Menu.Item>,
                 <Menu.Item as={NavLink} activeClassName="active" exact to="/map" key='map'>Google Maps</Menu.Item>,
-                <Menu.Item as={NavLink} activeClassName="" exact to="/add_driverinfo" key='add'>Driver Info</Menu.Item>,
+                <Menu.Item as={NavLink} activeClassName="" exact to="/add_driverinfo" key='add'>I want to Drive</Menu.Item>,
                 <Menu.Item as={NavLink} activeClassName="" exact to="/profile" key='profile'>Profile</Menu.Item>]
           ) : ''}
           {Roles.userIsInRole(Meteor.userId(), 'admin') ? (

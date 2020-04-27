@@ -9,6 +9,7 @@ class Landing extends React.Component {
 
           <Grid.Column width={4}>
             <h1> BowRide</h1>
+            <Image src={"/images/bowride-logo.png"}/>
           </Grid.Column>
 
           <Grid.Column width={8}>
