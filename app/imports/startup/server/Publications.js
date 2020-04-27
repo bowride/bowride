@@ -9,6 +9,13 @@ import { Review } from '../../api/Review/Review';
 /** ---------Drivers--------- */
 Meteor.publish('Drivers', function publish() {
   if (this.userId) {
+    return Drivers.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish('Profile', function publish() {
+  if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
     return Drivers.find({ owner: username });
   }
