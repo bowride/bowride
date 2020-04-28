@@ -1,6 +1,6 @@
-![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/landing-page.png)
+<img src="doc/bowride-logo.png">
 
-Meteor-application-template-react is a sample Meteor 1.9 application that illustrates:
+BowRide is a sample Meteor 1.9 application that illustrates:
 
   * A standard directory layout using 'imports/' as recommended in the [Meteor Guide](https://guide.meteor.com/structure.html)
   * [Semantic UI React](https://react.semantic-ui.com/) for user interface.
@@ -10,13 +10,14 @@ Meteor-application-template-react is a sample Meteor 1.9 application that illust
   * Initialization of users and data from a settings file.
   * Alerts regarding success or failure of DB updates using [Sweet Alert](https://sweetalert.js.org/).
   * Quality assurance using [ESLint](http://eslint.org) with packages to partially enforce the [Meteor Coding Standards](https://guide.meteor.com/code-style.html) and the [AirBnB Javascript Style Guide](https://github.com/airbnb/javascript).
+  
 
-The goal of this template is to help you get quickly started doing Meteor development by providing a reasonable directory structure for development and deployment, a set of common extensions to the core framework, and boilerplate code to implement basic page display, navigation, forms, roles, and collection manipulation.
+Bowride is a website that will allow users to organize carpools with other members of the UH community. Users can sign up to be a driver or rider, and drivers can search for riders that are most convenient to/from campus. These carpools can be reoccurring such as everyday classes or one-time such as for special events. A rating system for both drivers and passengers prevents abuses, plus a special administrator mode that enables the site admin to remove users based upon substantiated complaints.
 
 To keep this codebase simple and small, some important capabilities are intentionally excluded from this template:
 
   * Testing.
-  * Security (meteor-application-template-react enables the insecure packages)
+  * Security (BowRide enables the insecure packages)
 
 Examples of the these capabilities will be provided elsewhere.
 
@@ -24,7 +25,7 @@ Examples of the these capabilities will be provided elsewhere.
 
 First, [install Meteor](https://www.meteor.com/install).
 
-Second, go to [https://github.com/ics-software-engineering/meteor-application-template-react](https://github.com/ics-software-engineering/meteor-application-template-react), and click the "Use this template" button. Complete the dialog box to create a new repository that you own that is initialized with this template's files.
+Second, go to [https://github.com/bowride/bowride](https://github.com/bowride/bowride), and click the "Use this template" button. Complete the dialog box to create a new repository that you own that is initialized with this template's files.
 
 Third, go to your newly created repository, and click the "Clone or download" button to download your new GitHub repo to your local file system.  Using [GitHub Desktop](https://desktop.github.com/) is a great choice if you use MacOS or Windows.
 
@@ -36,7 +37,7 @@ $ meteor npm install
 
 ## Running the system
 
-Once the libraries are installed, you can run the application by invoking the "start" script in the [package.json file](https://github.com/ics-software-engineering/meteor-application-template-react/blob/master/app/package.json):
+Once the libraries are installed, you can run the application by invoking the "start" script in the [package.json file](https://github.com/bowride/bowride/blob/master/app/package.json):
 
 ```
 $ meteor npm run start
@@ -47,10 +48,10 @@ The first time you run the app, it will create some default users and data. Here
 ```
 meteor npm run start
 
-> meteor-application-template-react@ start /Users/philipjohnson/github/ics-software-engineering/meteor-application-template-react/app
+> BowRide@ start /Users/DerekSola/github/ics-software-engineering/BowRide/app
 > meteor --no-release-check --settings ../config/settings.development.json
 
-[[[[[ ~/github/ics-software-engineering/meteor-application-template-react/app ]]]]]
+[[[[[ ~/github/ics-software-engineering/BowRide/app ]]]]]
 
 => Started proxy.
 => Started MongoDB.
@@ -91,8 +92,8 @@ Intermittently, you may see the following error message in the console when the 
 
 ```
 MongoError: not master and slaveOk=false
-     at queryCallback (/Users/philipjohnson/.meteor/packages/npm-mongo/.3.1.1.1mmptof.qcqo++os+web.browser+web.browser.legacy+web.cordova/npm/node_modules/mongodb-core/lib/cursor.js:248:25)
-     at /Users/philipjohnson/.meteor/packages/npm-mongo/.3.1.1.1mmptof.qcqo++os+web.browser+web.browser.legacy+web.cordova/npm/node_modules/mongodb-core/lib/connection/pool.js:532:18
+     at queryCallback (/Users/DerekSola/.meteor/packages/npm-mongo/.3.1.1.1mmptof.qcqo++os+web.browser+web.browser.legacy+web.cordova/npm/node_modules/mongodb-core/lib/cursor.js:248:25)
+     at /Users/DerekSola/.meteor/packages/npm-mongo/.3.1.1.1mmptof.qcqo++os+web.browser+web.browser.legacy+web.cordova/npm/node_modules/mongodb-core/lib/connection/pool.js:532:18
      at _combinedTickCallback (internal/process/next_tick.js:131:7)
      at process._tickDomainCallback (internal/process/next_tick.js:218:9)
 ```
@@ -101,7 +102,7 @@ While irritating, this message appears to be harmless and [possibly related to a
 
 ### Viewing the running app
 
-If all goes well, the template application will appear at [http://localhost:3000](http://localhost:3000).  You can login using the credentials in [settings.development.json](https://github.com/ics-software-engineering/meteor-application-template-react/blob/master/config/settings.development.json), or else register a new account.
+If all goes well, the template application will appear at [http://localhost:3000](http://localhost:3000).  You can login using the credentials in [settings.development.json](https://github.com/bowride/bowride/blob/master/config/settings.development.json), or else register a new account.
 
 ### ESLint
 
@@ -168,7 +169,7 @@ By default, each user only sees the Stuff that they have created.  However, the 
 
 When you retrieve the app at http://localhost:3000, this is what should be displayed:
 
-![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/landing-page.png)
+<img src="doc/bowride-logo.png">
 
 The next step is to use the Login menu to either Login to an existing account or register a new account.
 
@@ -176,20 +177,20 @@ The next step is to use the Login menu to either Login to an existing account or
 
 Clicking on the Login link, then on the Sign In menu item displays this page:
 
-![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/signin-page.png)
+<img src="doc/bowride-logo.png">
 
 #### Register page
 
 Alternatively, clicking on the Login link, then on the Sign Up menu item displays this page:
 
-![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/register-page.png)
+<img src="doc/bowride-logo.png">
 
 
 #### Landing (after Login) page, non-Admin user
 
 Once you log in (either to an existing account or by creating a new one), the navbar changes as follows:
 
-![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/landing-after-login-page.png)
+<img src="doc/bowride-logo.png">
 
 You can now add new Stuff documents, and list the Stuff you have created. Note you cannot see any Stuff created by other users.
 
@@ -197,13 +198,13 @@ You can now add new Stuff documents, and list the Stuff you have created. Note y
 
 After logging in, here is the page that allows you to add new Stuff:
 
-![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/add-stuff-page.png)
+<img src="doc/bowride-logo.png">
 
 #### List Stuff page
 
 After logging in, here is the page that allows you to list all the Stuff you have created:
 
-![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/list-stuff-page.png)
+<img src="doc/bowride-logo.png">
 
 You click the "Edit" link to go to the Edit Stuff page, shown next.
 
@@ -211,19 +212,19 @@ You click the "Edit" link to go to the Edit Stuff page, shown next.
 
 After clicking on the "Edit" link associated with an item, this page displays that allows you to change and save it:
 
-![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/edit-stuff-page.png)
+<img src="doc/bowride-logo.png">
 
 #### Landing (after Login), Admin user
 
 You can define an "admin" user in the settings.json file. This user, after logging in, gets a special entry in the navbar:
 
-![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/admin-landing-page.png)
+<img src="doc/bowride-logo.png">
 
 #### Admin page (list all users stuff)
 
 To provide a simple example of a "super power" for Admin users, the Admin page lists all of the Stuff by all of the users:
 
-![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template-react/master/doc/admin-list-stuff-page.png)
+<img src="doc/bowride-logo.png">
 
 Note that non-admin users cannot get to this page, even if they type in the URL by hand.
 
@@ -283,7 +284,7 @@ It's significantly easier to do development with ESLint integrated directly into
 
 ## Screencasts
 
-For more information about this system, please watch one or more of the following screencasts. Note that the current source code might differ slightly from the code in these screencasts, but the changes should be very minor.
+For more information about the template fo this system, please watch one or more of the following screencasts. Note that the current source code might differ slightly from the code in these screencasts, but the changes should be very minor.
 
   * [Walkthrough of system user interface (5 min)](https://www.youtube.com/watch?v=shYgqco1AUs)
   * [Data and accounts structure and initialization (15 min)](https://www.youtube.com/watch?v=p9dvM6MdCGs)
