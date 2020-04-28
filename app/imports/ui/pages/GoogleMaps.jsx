@@ -23,11 +23,11 @@ export default class SimpleMap extends Component{
   render() {
     return (
 
-        <div style={{height: '80vh', width: '80vw'}}>
+        <div className='ui center aligned container' style={{height: '80vh', width: '80vw'}}>
         <GoogleMapReact
             bootstrapURLKeys={{ key: 'AIzaSyDxXxFiIPFfY3-PdFOuEa9gR4hjICcpwZA'}}
             defaultCenter={{lat: 21.298872, lng: -157.817204}}
-            defaultZoom={ 11 }
+            defaultZoom={ 16 }
         >
           <Marker
               lat={21.298872}
