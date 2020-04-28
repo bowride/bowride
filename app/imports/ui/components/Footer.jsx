@@ -20,11 +20,11 @@ export default class Footer extends React.Component {
               </List>
             </Grid.Column>
 
-            <Grid.Column textAlign='center' mobile={16} tablet={8} computer={3}>
-              <Header inverted>Driver</Header>
+            <Grid.Column textAlign='center' mobile={16} tablet={8} computer={5}>
+              <Header inverted>Drivers/Riders</Header>
               <List>
                 <Divider/>
-                <List.Item as={NavLink} activeClassName="" exact to="/signup">Become a Driver</List.Item>
+                <List.Item as={NavLink} activeClassName="" exact to="/add_driverinfo">Become a Driver</List.Item>
                 <List.Item as='a'>Why Bowride</List.Item>
                 <List.Item as='a'>Safety</List.Item>
                 <List.Item as='a'>Help</List.Item>
@@ -32,18 +32,7 @@ export default class Footer extends React.Component {
               </List>
             </Grid.Column>
 
-            <Grid.Column textAlign='center' mobile={16} tablet={8} computer={3}>
-              <Header inverted>Rider</Header>
-              <List>
-                <Divider/>
-                <List.Item as={NavLink} activeClassName="" exact to="/signup">Sign up to Ride</List.Item>
-                <List.Item as='a'>Safety</List.Item>
-                <List.Item as='a'>Help</List.Item>
-                <List.Item as={NavLink} activeClassName="" exact to="/signin">Sign in</List.Item>
-              </List>
-            </Grid.Column>
-
-            <Grid.Column textAlign='center' mobile={16} tablet={8} computer={3}>
+            <Grid.Column textAlign='center' mobile={16} tablet={8} computer={5}>
               <Header inverted>Connect</Header>
               <List>
                 <Divider/>
