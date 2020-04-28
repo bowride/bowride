@@ -25,7 +25,7 @@ export default class Footer extends React.Component {
               <List>
                 <Divider/>
                 <List.Item as={NavLink} activeClassName="" exact to="/add_driverinfo">Become a Driver</List.Item>
-                <List.Item as='a'>Why Bowride</List.Item>
+                <List.Item as={NavLink} activeClassName="" exact to="/why">Why BowRide</List.Item>
                 <List.Item as={NavLink} activeClassName="" exact to="/safety">Safety</List.Item>
                 <List.Item as='a'>Help</List.Item>
                 <List.Item as={NavLink} activeClassName="" exact to="/signin">Sign in</List.Item>

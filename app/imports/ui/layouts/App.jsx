@@ -22,6 +22,7 @@ import AddDriverInfo from '../pages/AddDriverInfo';
 import MyProfile from '../pages/MyProfile';
 import Safety from '../pages/Safety';
 import adminStats from '../pages/adminStats';
+import WhyBowride from '../pages/WhyBowride';
 
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
@@ -36,6 +37,7 @@ class App extends React.Component {
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
               <Route path="/safety" component={Safety}/>
+              <Route path="/why" component={WhyBowride}/>
               <ProtectedRoute path="/list" component={ListContacts}/>
               <ProtectedRoute path="/addContacts" component={AddContacts}/>
               <ProtectedRoute path="/edit/:_id" component={EditDriver}/>
