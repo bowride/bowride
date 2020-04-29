@@ -2,7 +2,7 @@
 /**----------------------------------------------------------------- */
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import {Card, Container, Loader, Divider, Statistic } from 'semantic-ui-react';
+import {Card, Container, Loader, Divider, Statistic, Button } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Driver from '../components/Driver';
@@ -35,7 +35,13 @@ class adminStats extends React.Component {
                       <Statistic.Label>Rewiews submitted</Statistic.Label>
                   </Statistic>
               </Statistic.Group>
-              </Container>
+            </Container>
+            <Divider/>
+            <Container textAlign='center'>
+              <Button size = 'large'>View all Profiles</Button>
+              <Button size = 'large'>View all Rides</Button>
+              <Button size='large'>more controls</Button>
+            </Container>
         </Container>
     );
   }

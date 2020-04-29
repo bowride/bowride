@@ -36,8 +36,7 @@ class App extends React.Component {
               <ProtectedRoute path="/list" component={ListContacts}/>
               <ProtectedRoute path="/addContacts" component={AddContacts}/>
               <ProtectedRoute path="/edit/:_id" component={EditDriver}/>
-              <AdminProtectedRoute path="/admin" component={ListContactsAdmin}/>
-              <AdminProtectedRoute path="/adminStats" component={adminStats}/>
+              <AdminProtectedRoute path="/admin" component={adminStats}/>
               <ProtectedRoute path="/add_driverinfo" component={Driver_Profile}/>
               <ProtectedRoute path="/listDrivers" component={ListDrivers}/>
               <ProtectedRoute path="/profile" component={MyProfile}/>
