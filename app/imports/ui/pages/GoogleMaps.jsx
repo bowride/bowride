@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
-import { Grid, Header, Loader } from 'semantic-ui-react';
+import { Card, Grid, Header, Loader, Segment } from 'semantic-ui-react';
 import GoogleMapReact from 'google-map-react';
+import PropTypes from 'prop-types';
+import { withTracker } from 'meteor/react-meteor-data';
+import { Meteor } from "meteor/meteor";
+import { Drivers } from '../../api/driver/Driver';
+import { Review } from '../../api/Review/Review';
+import Driver from '../components/Driver';
 
 //design for marker
 const Marker = ({ text }) => (
@@ -20,13 +26,13 @@ const Marker = ({ text }) => (
 );
 
 // map options/design map
-function createMapOptions (maps) {
+function createMapOptions(maps) {
   return {
     panControl: true,
     mapTypeControl: false,
     scrollwheel: true,
     onClick: true,
-    styles: [{ stylers: [{ 'saturation': -100 }, { 'gamma': 1.0 }, { 'lightness': 4 }, { 'visibility': 'on' }] }]
+    styles: [{ stylers: [{ 'saturation': 100 }, { 'gamma': 1.0 }, { 'lightness': 4 }, { 'visibility': 'on' }] }]
   }
 }
 
@@ -34,19 +40,20 @@ const renderMarkers = (map, maps) => {
   // use map and maps objects
 };
 
-export default class SimpleMap extends Component {
+class GoogleMaps extends Component {
 
   // onClick event for markers
   _onChildClick = (key, childProps) => {
-    alert('Clicked Marker');
+    alert("You clicked the marker, stay tuned for updates")
   };
 
+  render() {
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
+  }
 
   //render map as <GoogleMapReact> and markers as <Marker>
-  render() {
+  renderPage() {
     return (
-
-
 
         <Grid columns={2} style={{ height: '90vh', width: '100vw', backgroundColor: 'green' }}>
           <Grid.Column>
@@ -57,7 +64,7 @@ export default class SimpleMap extends Component {
                 defaultZoom={17}
                 options={createMapOptions}
                 onChildClick={this._onChildClick}
-                yesIWantToUseGoogleMapApiInternals={ true }
+                yesIWantToUseGoogleMapApiInternals={true}
                 onGoogleApiLoaded={({ map, maps }) => renderMarkers(map, maps)}
             >
 
@@ -77,11 +84,19 @@ export default class SimpleMap extends Component {
                 <Header as='h1' style={{ textAlign: 'center' }}>
                   Click the markers to see drivers and riders at each stop
                 </Header>
+                <Segment style={{overflow: 'auto', maxHeight: '50vh' }}>
+
+                <Card.Group>
+                  {this.props.drivers.map((driver, index) => <Driver key={index} driver={driver}
+                                                                     Drivers={Drivers}
+                                                                     reviews={this.props.reviews.filter(review => (review.driverId === driver._id))}/>)}
+                </Card.Group>
+                </Segment>
               </Grid.Row>
 
               <Grid.Row>
                 <Header as='h1' style={{ textAlign: 'center' }}>
-                  Click the markers to see drivers and riders at each stop
+                  Click the markers to see riders and riders at each stop
                 </Header>
               </Grid.Row>
             </Grid>
@@ -93,3 +108,19 @@ export default class SimpleMap extends Component {
 
 }
 
+GoogleMaps.propTypes = {
+  drivers: PropTypes.array.isRequired,
+  reviews: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired,
+};
+
+export default withTracker(() => {
+  // Get access to Stuff documents.
+  const subscription = Meteor.subscribe('Drivers');
+  const subscription2 = Meteor.subscribe('Reviews');
+  return {
+    drivers: Drivers.find({}).fetch(),
+    reviews: Review.find({}).fetch(),
+    ready: subscription.ready() && subscription2.ready(),
+  };
+})(GoogleMaps);
