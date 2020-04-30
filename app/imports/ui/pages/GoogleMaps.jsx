@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
-import { Loader } from 'semantic-ui-react';
+import { Grid, Header, Loader } from 'semantic-ui-react';
 import GoogleMapReact from 'google-map-react';
+
 
 const Marker = ({ text }) => (
     <div style={{
@@ -23,11 +24,14 @@ export default class SimpleMap extends Component{
   render() {
     return (
 
-        <div className='ui center aligned container' style={{height: '80vh', width: '80vw'}}>
+        <Grid columns={2} style={{height: '90vh', width: '100vw', backgroundColor:'green'}}>
+
+          <Grid.Column>
+
         <GoogleMapReact
             bootstrapURLKeys={{ key: 'AIzaSyDxXxFiIPFfY3-PdFOuEa9gR4hjICcpwZA'}}
             defaultCenter={{lat: 21.298872, lng: -157.817204}}
-            defaultZoom={ 16 }
+            defaultZoom={ 17 }
         >
           <Marker
               lat={21.298872}
@@ -35,7 +39,18 @@ export default class SimpleMap extends Component{
               text={'Pick-Up Location'}
           />
         </GoogleMapReact>
-        </div>
+
+          </Grid.Column>
+
+          <Grid.Column>
+
+            <Header as='h1' style={{textAlign:'center'}}>
+              Click the markers to see drivers and riders at each stop
+            </Header>
+
+          </Grid.Column>
+
+        </Grid>
     );
   }
 
