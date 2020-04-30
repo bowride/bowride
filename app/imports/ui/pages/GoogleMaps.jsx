@@ -55,7 +55,13 @@ class GoogleMaps extends Component {
   renderPage() {
     return (
 
-        <Grid columns={2} style={{ height: '90vh', width: '100vw', backgroundColor: 'green' }}>
+        <Grid columns={2} style={{
+          height: '90vh',
+          width: '100vw',
+          backgroundColor: 'green',
+          paddingLeft: '10px',
+          paddingRight: '10px'
+        }}>
           <Grid.Column>
 
             <GoogleMapReact
@@ -81,23 +87,46 @@ class GoogleMaps extends Component {
             <Grid rows={2} className='ui center aligned two row grid' style={{ height: '90vh' }}>
 
               <Grid.Row>
-                <Header as='h1' style={{ textAlign: 'center' }}>
-                  Click the markers to see drivers and riders at each stop
-                </Header>
-                <Segment style={{overflow: 'auto', maxHeight: '50vh' }}>
 
-                <Card.Group>
-                  {this.props.drivers.map((driver, index) => <Driver key={index} driver={driver}
-                                                                     Drivers={Drivers}
-                                                                     reviews={this.props.reviews.filter(review => (review.driverId === driver._id))}/>)}
-                </Card.Group>
-                </Segment>
+                <Grid rows={2} className='ui center aligned two row grid' style={{ height: '40vh' }}>
+
+                  <Grid.Row>
+                    <Header as='h1' style={{ textAlign: 'center' }}>
+                      Click the markers to see drivers and riders at each stop
+                    </Header>
+                  </Grid.Row>
+
+                  <Grid.Row>
+                    <Segment style={{ overflow: 'auto', maxHeight: '50vh' }}>
+                      <Card.Group>
+                        {this.props.drivers.map((driver, index) => <Driver key={index} driver={driver}
+                                                                           Drivers={Drivers}
+                                                                           reviews={this.props.reviews.filter(review => (review.driverId === driver._id))}/>)}
+                      </Card.Group>
+                    </Segment>
+                  </Grid.Row>
+                </Grid>
               </Grid.Row>
 
               <Grid.Row>
-                <Header as='h1' style={{ textAlign: 'center' }}>
-                  Click the markers to see riders and riders at each stop
-                </Header>
+                <Grid rows={2} className='ui center aligned two row grid' style={{ height: '40vh' }}>
+
+                  <Grid.Row>
+                    <Header as='h1' style={{ textAlign: 'center' }}>
+                      Click the markers to see drivers and riders at each stop
+                    </Header>
+                  </Grid.Row>
+
+                  <Grid.Row>
+                    <Segment style={{ overflow: 'auto', maxHeight: '50vh' }}>
+                      <Card.Group>
+                        {this.props.drivers.map((driver, index) => <Driver key={index} driver={driver}
+                                                                           Drivers={Drivers}
+                                                                           reviews={this.props.reviews.filter(review => (review.driverId === driver._id))}/>)}
+                      </Card.Group>
+                    </Segment>
+                  </Grid.Row>
+                </Grid>
               </Grid.Row>
             </Grid>
           </Grid.Column>
