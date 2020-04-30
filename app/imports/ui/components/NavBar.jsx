@@ -11,7 +11,7 @@ class NavBar extends React.Component {
   render() {
     const menuStyle = { marginBottom: '10px', backgroundColor:'green'};
     return (
-        <Menu style={menuStyle} borderless stackable inverted>
+        <Menu style={menuStyle} borderless stackable inverted className="navbar">
           <Menu.Item as={NavLink} activeClassName="" exact to="/" alignment='center'>
             <Header inverted as='h1'><Image size='massive' centered src="/images/bowride-logo.png"/>BowRide</Header>
           </Menu.Item>

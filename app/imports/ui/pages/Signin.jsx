@@ -43,12 +43,13 @@ export default class Signin extends React.Component {
     // Otherwise return the Login form.
     return (
       <Container>
+        <Segment textAlign='center' style={{ padding: '8em 0em', minHeight: 700, backgroundColor: 'transparent' }} vertical>
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
-            <Header as="h2" textAlign="center">
-              Login to your account
+            <Header as="h2" style={{ padding: '1em 1em', fontSize: '2.3em'}} textAlign="center">
+              LOGIN
             </Header>
-            <Form onSubmit={this.submit}>
+            <Form size = 'large' onSubmit={this.submit}>
               <Segment stacked>
                 <Form.Input
                   label="Email"
@@ -68,7 +69,7 @@ export default class Signin extends React.Component {
                   type="password"
                   onChange={this.handleChange}
                 />
-                <Form.Button content="Submit"/>
+                <Form.Button color="primary" content="Submit"/>
               </Segment>
             </Form>
             <Message>
@@ -85,6 +86,7 @@ export default class Signin extends React.Component {
             )}
           </Grid.Column>
         </Grid>
+        </Segment>
       </Container>
     );
   }

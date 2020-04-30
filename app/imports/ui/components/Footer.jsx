@@ -27,7 +27,7 @@ export default class Footer extends React.Component {
                 <List.Item as={NavLink} activeClassName="" exact to="/add_driverinfo">Become a Driver</List.Item>
                 <List.Item as={NavLink} activeClassName="" exact to="/why">Why BowRide</List.Item>
                 <List.Item as={NavLink} activeClassName="" exact to="/safety">Safety</List.Item>
-                <List.Item as='a'>Help</List.Item>
+                <List.Item href={"https://bowride.github.io/"}>Help</List.Item>
                 <List.Item as={NavLink} activeClassName="" exact to="/signin">Sign in</List.Item>
               </List>
             </Grid.Column>

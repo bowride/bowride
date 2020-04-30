@@ -19,3 +19,12 @@ p {
   alignment: center;
 background-color: white;
 }
+
+.Landing{
+  background-image: url("/images/rainbowroad.jpeg");
+  background-size: cover;
+  background-blend-mode: luminosity;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+}

@@ -40,10 +40,11 @@ class Signup extends React.Component {
     }
     return (
       <Container>
+        <Segment inverted textAlign='center' style={{ padding: '8em 0em', minHeight: 660, backgroundColor: 'transparent' }} vertical>
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
-            <Header as="h2" textAlign="center">
-              Register your account
+            <Header as="h2" style={{ padding: '1em 1em', fontSize: '2.3em'}} textAlign="center">
+              SIGN UP
             </Header>
             <Form onSubmit={this.submit}>
               <Segment stacked>
@@ -65,10 +66,10 @@ class Signup extends React.Component {
                   type="password"
                   onChange={this.handleChange}
                 />
-                <Form.Button content="Submit"/>
+                <Form.Button color="primary" content="Submit"/>
               </Segment>
             </Form>
-            <Message>
+            <Message inverted color='green'>
               Already have an account? Login <Link to="/signin">here</Link>
             </Message>
             {this.state.error === '' ? (
@@ -82,6 +83,7 @@ class Signup extends React.Component {
             )}
           </Grid.Column>
         </Grid>
+        </Segment>
       </Container>
     );
   }
