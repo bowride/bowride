@@ -18,7 +18,7 @@ class MyProfile extends React.Component {
   renderPage() {
     return (
         <Container>
-        <Header as="h2" textAlign="center" inverted>List Contacts</Header>
+        <Header as="h2" textAlign="center"><br/><br/>You have not Driven Yet, Nothing to see here!<br/><br/><br/></Header>
         <Card.Group>
           {this.props.drivers.map((driver, index) => <Driver key={index} driver={driver}
                                                                 Drivers={Drivers}

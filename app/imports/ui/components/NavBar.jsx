@@ -9,17 +9,17 @@ import { Roles } from 'meteor/alanning:roles';
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
   render() {
-    const menuStyle = { marginBottom: '10px', backgroundColor:'green'};
+    const menuStyle = { backgroundColor:'green'};
     return (
-        <Menu style={menuStyle} borderless stackable inverted className="navbar">
+        <Menu style={menuStyle} inverted className="navbar">
           <Menu.Item as={NavLink} activeClassName="" exact to="/" alignment='center'>
             <Header inverted as='h1'><Image size='massive' centered src="/images/bowride-logo.png"/>BowRide</Header>
           </Menu.Item>
           {this.props.currentUser ? (
-              [<Menu.Item as={NavLink} activeClassName="active" exact to="/listDrivers" key='addContacts'><Icon name='car' size='large'/></Menu.Item>,
-                <Menu.Item as={NavLink} activeClassName="active" exact to="/map" key='map'>Google Maps</Menu.Item>,
-                <Menu.Item as={NavLink} activeClassName="" exact to="/add_driverinfo" key='add'>I want to Drive</Menu.Item>,
-                <Menu.Item as={NavLink} activeClassName="" exact to="/profile" key='profile'>Profile</Menu.Item>]
+              [<Menu.Item as={NavLink} activeClassName="active" exact to="/listDrivers" key='addContacts'>I want to Ride  <Icon name='street view' size='large'/></Menu.Item>,
+                <Menu.Item as={NavLink} activeClassName="active" exact to="/add_driverinfo" key='add'>I want to Drive  <Icon name='car' size='large'/></Menu.Item>,
+                <Menu.Item as={NavLink} activeClassName="active" exact to="/map" key='map'>Google Maps<Icon name='map outline' size='large'/></Menu.Item>,
+                <Menu.Item as={NavLink} activeClassName="" exact to="/profile" key='profile'> My Profile  <Icon name='user outline' size='large'/></Menu.Item>]
           ) : ''}
           {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
               <Menu.Item as={NavLink} activeClassName="" exact to="/admin" key='admin'>Admin</Menu.Item>
