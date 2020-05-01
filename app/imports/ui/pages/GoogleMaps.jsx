@@ -6,24 +6,11 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from "meteor/meteor";
 import { Drivers } from '../../api/driver/Driver';
 import { Review } from '../../api/Review/Review';
+import { Markers } from '../../api/marker/Marker';
 import Driver from '../components/Driver';
+import Marker from '../components/Marker';
 
-//design for marker
-const Marker = ({ text }) => (
-    <div style={{
-      color: 'white',
-      background: 'red',
-      padding: '15px 10px',
-      display: 'inline-flex',
-      textAlign: 'center',
-      alignItems: 'center',
-      justifyContent: 'center',
-      borderRadius: '50%',
-      transform: 'translate(-50%, -50%)'
-    }}>
-      {text}
-    </div>
-);
+
 
 // map options/design map
 function createMapOptions(maps) {
@@ -74,10 +61,10 @@ class GoogleMaps extends Component {
                 onGoogleApiLoaded={({ map, maps }) => renderMarkers(map, maps)}
             >
 
-              <Marker
-                  lat={21.298872}
-                  lng={-157.817204}
-                  text={'Pick-Up Location'}
+              <Markers
+                  {this.props.markers.map((marker, index) => <Marker key={index} marker={marker}
+                                                                     Markers={Markers}
+                                                                    />)}
               />
             </GoogleMapReact>
 
@@ -140,6 +127,7 @@ class GoogleMaps extends Component {
 GoogleMaps.propTypes = {
   drivers: PropTypes.array.isRequired,
   reviews: PropTypes.array.isRequired,
+  markers: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -147,9 +135,11 @@ export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe('Drivers');
   const subscription2 = Meteor.subscribe('Reviews');
+  const subscription3 = Meteor.subscribe('Markers');
   return {
     drivers: Drivers.find({}).fetch(),
     reviews: Review.find({}).fetch(),
-    ready: subscription.ready() && subscription2.ready(),
+    markers: Markers.find({}).fetch(),
+    ready: subscription.ready() && subscription2.ready() && subscription3.ready(),
   };
 })(GoogleMaps);

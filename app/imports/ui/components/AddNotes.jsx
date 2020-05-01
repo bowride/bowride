@@ -15,9 +15,9 @@ class AddNotes extends React.Component {
     Note.insert({ note, owner, contactId, createdAt },
       (error) => {
         if (error) {
-          swal('Note Error', error.message, 'error');
+          swal('Marker Error', error.message, 'error');
         } else {
-          swal('Success', 'Note added successfully', 'success');
+          swal('Success', 'Marker added successfully', 'success');
           formRef.reset();
         }
       });
