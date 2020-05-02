@@ -47,7 +47,7 @@ class App extends React.Component {
               <ProtectedRoute path="/profile" component={MyProfile}/>
               <ProtectedRoute path="/addDriver" component={AddDriverInfo}/>
               <ProtectedRoute path="/map" component={GoogleMaps}/>
-              <ProtectedRoute path="/signout" component={Signout}/>
+              <Route path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>
             <Footer/>

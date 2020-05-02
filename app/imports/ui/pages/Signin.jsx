@@ -45,7 +45,7 @@ export default class Signin extends React.Component {
       <Container>
         <Segment textAlign='center' style={{ padding: '8em 0em', minHeight: 700, backgroundColor: 'transparent' }} vertical>
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
-          <Grid.Column>
+          <Grid.Column mobile={16} tablet={8} computer={6}>
             <Header as="h2" style={{ padding: '1em 1em', fontSize: '2.3em'}} textAlign="center">
               LOGIN
             </Header>

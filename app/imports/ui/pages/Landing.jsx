@@ -42,7 +42,7 @@ class Landing extends React.Component {
               marginTop: '1.5em',
            }}
           />
-          <Button primary as={NavLink} activeClassName="" exact to="/signup" textAlign="center" size='huge'>
+          <Button inverted color='yellow' as={NavLink} activeClassName="" exact to="/signup" textAlign="center" size='huge'>
             Get Started
             <Icon name='right arrow' />
           </Button>
@@ -90,11 +90,11 @@ class Landing extends React.Component {
               </Grid.Column>
               <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
                 <Header inverted color = "White" as='h3' style={{ fontSize: '2.3em' }}>
-                  "Its the best thing i've see in my life."
+                  "Its the best thing i've seen in my life."
                 </Header>
                 <p style={{ fontSize: '1.33em' , color:'white'}}>
-                  <Image avatar size='small' src='/images/cam.jpg' />
-                  <b>Cam Moore</b> ICS lecturer At UH Manoa
+                  <Image avatar size='tiny' src='/images/cam.jpg' />
+                  <b>Cam Moore</b> CS Lecturer At UH Manoa
                 </p>
               </Grid.Column>
             </Grid.Row>

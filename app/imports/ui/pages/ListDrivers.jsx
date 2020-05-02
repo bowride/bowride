@@ -29,9 +29,9 @@ class ListDrivers extends React.Component {
     ]
 
     return (
-        <Container>
+        <Container style={{ padding: '1.5em 0em'}}>
         <Divider hidden/>
-        <Form size={'massive'}>
+        <Form size={'huge'}>
             <Form.Group widths='equal'>
                 <Form.Input id = 'location' label ='Location' placeholder='landmark, or address'/>
                 <Form.Select id='type' label='Car Type' placeholder='Sedan' options = {cartypeOptions}/>

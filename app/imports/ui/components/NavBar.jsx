@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
-import { Menu, Dropdown, Header, Image , Icon} from 'semantic-ui-react';
+import { Menu, Dropdown, Header, Image , Divider, Icon} from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
   render() {
-    const menuStyle = { backgroundColor:'green'};
+    const menuStyle = { backgroundColor:'green', backgroundSize:"content"};
     return (
-        <Menu style={menuStyle} inverted className="navbar">
+        <Menu style={menuStyle} stackable inverted className="navbar">
           <Menu.Item as={NavLink} activeClassName="" exact to="/" alignment='center'>
             <Header inverted as='h1'><Image size='massive' centered src="/images/bowride-logo.png"/>BowRide</Header>
           </Menu.Item>
@@ -27,17 +27,22 @@ class NavBar extends React.Component {
 
           <Menu.Item position="right">
             {this.props.currentUser === '' ? (
-                <Dropdown text="Login" pointing="top right" icon={'user'}>
+                <Dropdown inverted color='black' text="Login" pointing="top right" icon={'user'}>
                   <Dropdown.Menu>
                     <Dropdown.Item icon="user" text="Sign In" as={NavLink} exact to="/signin"/>
                     <Dropdown.Item icon="add user" text="Sign Up" as={NavLink} exact to="/signup"/>
+                    <Divider/>
+                    <Dropdown.Item icon="help circle" text="Help" as={NavLink} exact to="/"/>
                   </Dropdown.Menu>
                 </Dropdown>
             ) : (
                 <Dropdown text={this.props.currentUser} pointing="top right" icon={'user'}>
                   <Dropdown.Menu>
-                    <Dropdown.Item icon="sign out" text="Sign Out" as={NavLink} exact to="/signout"/>
                     <Dropdown.Item text="My Profile" as={NavLink} exact to="/profile"/>
+                    <Dropdown.Item text="Sign Out" icon="sign out"  as={NavLink} exact to="/signout"/>
+                    <Divider/>
+                    <Dropdown.Item icon="help circle" text="Help" as={NavLink} exact to="/"/>
+                    <Dropdown.Item icon="comment alternate" text="Send Feedback" as={NavLink} exact to="/"/>
                   </Dropdown.Menu>
                 </Dropdown>
             )}
