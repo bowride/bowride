@@ -2,7 +2,7 @@
 /**----------------------------------------------------------------- */
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import {Card, Container, Loader, Divider, Button, Form } from 'semantic-ui-react';
+import {Card, Container, Loader, Divider, Button, Form, Segment, Rail } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Driver from '../components/Driver';
@@ -29,21 +29,32 @@ class ListDrivers extends React.Component {
     ]
 
     return (
-        <Container style={{ padding: '1.5em 0em'}}>
-        <Divider hidden/>
-        <Form size={'huge'}>
-            <Form.Group widths='equal'>
-                <Form.Input id = 'location' label ='Location' placeholder='landmark, or address'/>
-                <Form.Select id='type' label='Car Type' placeholder='Sedan' options = {cartypeOptions}/>
-                <Form.Select id='seats' label='Seats' placeholder='4' options={seatsOptions}/>
-            </Form.Group>
-        </Form>
-        <Divider hidden/>
-        <Card.Group>
-          {this.props.drivers.map((driver, index) => <Driver key={index} driver={driver}
-                                                                Drivers={Drivers}
-                       reviews={this.props.reviews.filter(review => (review.driverId === driver._id))}/>)}
-        </Card.Group>
+        <Container style={{ padding: '1.5em 0em' }}>
+          <Segment raised secondary>
+            <Divider hidden/>
+
+            <Rail close position='left'>
+              <Segment raised secondary>Left extra Content</Segment>
+            </Rail>
+
+            <Rail close position='right'>
+              <Segment raised secondary>Right extra Content</Segment>
+            </Rail>
+
+            <Form size={'huge'}>
+                <Form.Group widths='equal'>
+                    <Form.Input id = 'location' label ='Location' placeholder='landmark, or address'/>
+                    <Form.Select id='type' label='Car Type' placeholder='Sedan' options = {cartypeOptions}/>
+                    <Form.Select id='seats' label='Seats' placeholder='4' options={seatsOptions}/>
+                </Form.Group>
+            </Form>
+            <Divider hidden/>
+            <Card.Group doubling itemsPerRow={3}>
+              {this.props.drivers.map((driver, index) => <Driver key={index} driver={driver}
+                                                                    Drivers={Drivers}
+                          reviews={this.props.reviews.filter(review => (review.driverId === driver._id))}/>)}
+            </Card.Group>
+          </Segment>
         </Container>
     );
   }

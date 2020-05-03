@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, Confirm, Feed } from 'semantic-ui-react';
+import { Button, Card, Confirm, Feed, Divider } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 import Review from './Reviews';
@@ -24,16 +24,18 @@ class Driver extends React.Component {
 
   render() {
     return (
-        <Card centered>
-          <Card.Content>
-            <Card.Header>{this.props.driver.firstName} {this.props.driver.lastName}</Card.Header>
-            <Card.Meta>{this.props.driver.carMake}</Card.Meta>
-            <Card.Meta>{this.props.driver.carType}</Card.Meta>
-            <Card.Meta>{this.props.driver.carYear}</Card.Meta>
-            <Card.Meta>{this.props.driver.licensePlate}</Card.Meta>
-          </Card.Content>
-          <Card.Content extra>
-            <Link to={`/edit/${this.props.driver._id}`}>Edit</Link>
+        <Card centered textAlign="center">
+          <Card.Content textAlign="center">
+            <Card.Header size='large' Style={{fontSize:'20px'}}>{this.props.driver.firstName} {this.props.driver.lastName}</Card.Header>
+            <Divider hidden/>
+            <Card.Meta>Drives a {this.props.driver.carYear} {this.props.driver.carMake}</Card.Meta>
+            <Card.Meta>Registation: {this.props.driver.licensePlate}</Card.Meta>
+            <Card.Meta>Car type: {this.props.driver.carType}</Card.Meta>
+
+            <Button basic centered style={{margin:'8px 0em'}} color='grey'> 
+              <Link to={`/edit/${this.props.driver._id}`}>Edit</Link>
+            </Button>
+            
           </Card.Content>
           <Card.Content extra>
             <Feed>
