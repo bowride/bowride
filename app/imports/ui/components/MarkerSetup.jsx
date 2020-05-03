@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import GoogleMapReact from 'google-map-react';
 
 //design for marker
-const Markers = ({ text }) => (
+const Markers = ({text}) => (
     <div style={{
       color: 'white',
       background: 'red',
@@ -14,13 +15,14 @@ const Markers = ({ text }) => (
       justifyContent: 'center',
       borderRadius: '50%',
       transform: 'translate(-50%, -50%)'
-    }}>
-      {text}
+    }}> {text}
     </div>
 );
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
-class Marker extends React.Component {
+class MarkerSetup extends React.Component {
+
+
 
   render() {
     return (
@@ -34,9 +36,9 @@ class Marker extends React.Component {
 }
 
 /** Require a document to be passed to this component. */
-Marker.propTypes = {
-  markers: PropTypes.array.isRequired,
+MarkerSetup.propTypes = {
+  markers: PropTypes.object.isRequired,
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */
-export default withRouter(Marker);
+export default withRouter(MarkerSetup);

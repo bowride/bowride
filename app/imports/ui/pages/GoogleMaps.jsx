@@ -8,9 +8,7 @@ import { Drivers } from '../../api/driver/Driver';
 import { Review } from '../../api/Review/Review';
 import { Markers } from '../../api/marker/Marker';
 import Driver from '../components/Driver';
-import Marker from '../components/Marker';
-
-
+import Marker from '../components/MarkerSetup';
 
 // map options/design map
 function createMapOptions(maps) {
@@ -61,11 +59,10 @@ class GoogleMaps extends Component {
                 onGoogleApiLoaded={({ map, maps }) => renderMarkers(map, maps)}
             >
 
-              <Markers
-                  {this.props.markers.map((marker, index) => <Marker key={index} marker={marker}
-                                                                     Markers={Markers}
-                                                                    />)}
-              />
+              <div>
+                  {this.props.markers.map((marker, index) => <Marker key={index} marker={marker}/>)}
+              </div>
+
             </GoogleMapReact>
 
           </Grid.Column>
@@ -127,7 +124,7 @@ class GoogleMaps extends Component {
 GoogleMaps.propTypes = {
   drivers: PropTypes.array.isRequired,
   reviews: PropTypes.array.isRequired,
-  markers: PropTypes.array.isRequired,
+  markers: PropTypes.object.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
