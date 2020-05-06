@@ -8,8 +8,6 @@ import { Drivers } from '../../api/driver/Driver';
 import { Review } from '../../api/Review/Review';
 import { Markers } from '../../api/marker/Marker';
 import Driver from '../components/Driver';
-import Marker from '../components/MarkerSetup';
-
 // map options/design map
 function createMapOptions(maps) {
   return {
@@ -24,6 +22,21 @@ function createMapOptions(maps) {
 const renderMarkers = (map, maps) => {
   // use map and maps objects
 };
+
+const Marker = ({text}) => (
+    <div style={{
+      color: 'white',
+      background: 'red',
+      padding: '15px 10px',
+      display: 'inline-flex',
+      textAlign: 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: '50%',
+      transform: 'translate(-50%, -50%)'
+    }}> {text}
+    </div>
+);
 
 class GoogleMaps extends Component {
 
@@ -59,9 +72,11 @@ class GoogleMaps extends Component {
                 onGoogleApiLoaded={({ map, maps }) => renderMarkers(map, maps)}
             >
 
-              <div>
-                  {this.props.markers.map((marker, index) => <Marker key={index} marker={marker}/>)}
-              </div>
+              <Marker
+                  lat={this.props.markers.lat}
+                  lng={this.props.markers.lng}
+                  text={this.props.markers.text}
+              />
 
             </GoogleMapReact>
 
