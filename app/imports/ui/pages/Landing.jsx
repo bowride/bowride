@@ -13,15 +13,13 @@ class Landing extends React.Component {
             textAlign='center'
             style={{ minHeight: 550, padding: '1em 0em',backgroundColor: 'green'}}
             vertical
-            Container
         >
           <Divider hidden/>
           <Header
             inverted 
             as ='h1' 
-            size='huge' 
-            textAlign='center' 
-            color = "White"
+            size='huge'
+            textAlign='center'
             content= "More People Ride-Sharing Means Less Cars On The Road!"
             style={{
                 fontSize: '4em',
@@ -42,7 +40,7 @@ class Landing extends React.Component {
               marginTop: '1.5em',
            }}
           />
-          <Button primary as={NavLink} activeClassName="" exact to="/signup" textAlign="center" size='huge'>
+          <Button primary as={NavLink} activeClassName="" exact to="/signup" textalign="center" size='huge'>
             Get Started
             <Icon name='right arrow' />
           </Button>
@@ -52,14 +50,14 @@ class Landing extends React.Component {
           <Grid container stackable verticalAlign='middle'>
             <Grid.Row>
               <Grid.Column width={8}>
-                <Header inverted color = "White" as='h2' style={{ fontSize: '2.3em' }}>
+                <Header inverted as='h2' style={{ fontSize: '2.3em' }}>
                   We Connect Riders To Drivers
                 </Header>
                 <p style={{ fontSize: '1.33em', color:'white'}}>
                   Need a lift or maybe just someone to share your drive with? Simply check out who
                    else is going to your destination and share the ride.
                 </p>
-                <Header inverted color = "White" as='h2' style={{ fontSize: '2.3em' }}>
+                <Header inverted as='h2' style={{ fontSize: '2.3em' }}>
                   Safety is our Main Concern 
                 </Header>
                 <p style={{ fontSize: '1.33em', color:'white' }}>
@@ -83,13 +81,13 @@ class Landing extends React.Component {
           <Grid celled='internally' columns='equal' stackable>
             <Grid.Row textAlign='center'>
               <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                <Header inverted color = "White" as='h3' style={{ fontSize: '2.3em' }}>
+                <Header inverted as='h3' style={{ fontSize: '2.3em' }}>
                   "It's More Practical For Students."
                 </Header>
                 <p style={{ fontSize: '1.33em', color:'white' }}>One student said about us</p>
               </Grid.Column>
               <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                <Header inverted color = "White" as='h3' style={{ fontSize: '2.3em' }}>
+                <Header inverted as='h3' style={{ fontSize: '2.3em' }}>
                   "Its the best thing i've see in my life."
                 </Header>
                 <p style={{ fontSize: '1.33em' , color:'white'}}>

@@ -124,7 +124,7 @@ class GoogleMaps extends Component {
 GoogleMaps.propTypes = {
   drivers: PropTypes.array.isRequired,
   reviews: PropTypes.array.isRequired,
-  markers: PropTypes.object.isRequired,
+  markers: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 

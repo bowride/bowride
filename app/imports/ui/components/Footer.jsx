@@ -9,7 +9,7 @@ export default class Footer extends React.Component {
   render() {
     return (
         <div className="footer-background">
-          <Grid container fluid alignment='center'>
+          <Grid container alignment='center'>
             <Grid.Column textAlign='center' mobile={16} tablet={8} computer={5}>
               <Header inverted>Bowride</Header>
               <List>
