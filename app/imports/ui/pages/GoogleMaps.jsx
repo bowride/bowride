@@ -7,6 +7,7 @@ import { Meteor } from "meteor/meteor";
 import { Drivers } from '../../api/driver/Driver';
 import { Review } from '../../api/Review/Review';
 import Driver from '../components/Driver';
+import Dropdown from 'semantic-ui-react/dist/commonjs/modules/Dropdown';
 // map options/design map
 function createMapOptions(maps) {
   return {
@@ -18,9 +19,6 @@ function createMapOptions(maps) {
   }
 }
 
-const renderMarkers = (map, maps) => {
-  // use map and maps objects
-};
 
 const Marker = ({text}) => (
     <div style={{
@@ -93,6 +91,39 @@ const Marker4 = ({text}) => (
     </div>
 );
 
+const dropDownOptions = [
+  {
+    key: 'UH Campus',
+    text: 'UH Campus',
+    value: 'UH Campus',
+  },
+  {
+    key: 'Manoa',
+    text: 'Manoa',
+    value: 'Manoa',
+  },
+  {
+    key: 'Kaimuki',
+    text: 'Kaimuki',
+    value: 'Kaimuki',
+  },
+  {
+    key: 'Palolo',
+    text: 'Palolo',
+    value: 'Palolo',
+  },
+  {
+    key: 'Ala Moana',
+    text: 'Ala Moana',
+    value: 'Ala Moana',
+  },
+  {
+    key: 'Kahala',
+    text: 'Kahala',
+    value: 'Kahala',
+  },
+]
+
 class GoogleMaps extends Component {
 
   // onClick event for markers
@@ -123,8 +154,6 @@ class GoogleMaps extends Component {
                 defaultZoom={17}
                 options={createMapOptions}
                 onChildClick={this._onChildClick}
-                yesIWantToUseGoogleMapApiInternals={true}
-                onGoogleApiLoaded={({ map, maps }) => renderMarkers(map, maps)}
             >
 
               <Marker
@@ -158,6 +187,15 @@ class GoogleMaps extends Component {
           </Grid.Column>
 
           <Grid.Column>
+            <Dropdown
+                  style={{fontSize:'25px'}}
+                  placeholder='Select Destination'
+                  fluid
+                  selection
+                  options={dropDownOptions}
+              />
+
+
             <Grid rows={2} className='ui center aligned two row grid' style={{ height: '90vh' }}>
 
               <Grid.Row>
