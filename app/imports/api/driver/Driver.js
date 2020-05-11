@@ -38,7 +38,7 @@ const DriverSchema = new SimpleSchema({
     },
     destination:{
       type: String,
-      allowedValues: ['UH Campus', 'Manoa', 'Kaimuki', 'Palolo', 'Kahala', 'Ala Moana'],
+      allowedValues: ['UH Campus', 'Manoa', 'Kaimuki', 'Palolo', 'Kahala', 'Ala Moana','Waikiki','kapiolani'],
       defaultValue: 'UH Campus',
       required: true,
     },
