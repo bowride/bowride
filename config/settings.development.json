@@ -73,5 +73,13 @@
       "licensePlate": "asdf",
       "owner": "admin@foo.com"
     }
-  ]
+    ],
+
+  "defaultCords": [
+    {
+      "lat": "21.298872",
+      "lng": "-157.817204",
+      "text": "Marker 1"
+    }
+    ]
 }

@@ -6,25 +6,8 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from "meteor/meteor";
 import { Drivers } from '../../api/driver/Driver';
 import { Review } from '../../api/Review/Review';
+import { Markers } from '../../api/marker/Marker';
 import Driver from '../components/Driver';
-
-//design for marker
-const Marker = ({ text }) => (
-    <div style={{
-      color: 'white',
-      background: 'red',
-      padding: '15px 10px',
-      display: 'inline-flex',
-      textAlign: 'center',
-      alignItems: 'center',
-      justifyContent: 'center',
-      borderRadius: '50%',
-      transform: 'translate(-50%, -50%)'
-    }}>
-      {text}
-    </div>
-);
-
 // map options/design map
 function createMapOptions(maps) {
   return {
@@ -39,6 +22,77 @@ function createMapOptions(maps) {
 const renderMarkers = (map, maps) => {
   // use map and maps objects
 };
+
+const Marker = ({text}) => (
+    <div style={{
+      color: 'white',
+      background: 'red',
+      padding: '15px 10px',
+      display: 'inline-flex',
+      textAlign: 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: '50%',
+      transform: 'translate(-50%, -50%)'
+    }}> {text}
+    </div>
+);
+const Marker1 = ({text}) => (
+    <div style={{
+      color: 'white',
+      background: 'red',
+      padding: '15px 10px',
+      display: 'inline-flex',
+      textAlign: 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: '50%',
+      transform: 'translate(-50%, -50%)'
+    }}> {text}
+    </div>
+);
+const Marker2 = ({text}) => (
+    <div style={{
+      color: 'white',
+      background: 'red',
+      padding: '15px 10px',
+      display: 'inline-flex',
+      textAlign: 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: '50%',
+      transform: 'translate(-50%, -50%)'
+    }}> {text}
+    </div>
+);
+const Marker3 = ({text}) => (
+    <div style={{
+      color: 'white',
+      background: 'red',
+      padding: '15px 10px',
+      display: 'inline-flex',
+      textAlign: 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: '50%',
+      transform: 'translate(-50%, -50%)'
+    }}> {text}
+    </div>
+);
+const Marker4 = ({text}) => (
+    <div style={{
+      color: 'white',
+      background: 'red',
+      padding: '15px 10px',
+      display: 'inline-flex',
+      textAlign: 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: '50%',
+      transform: 'translate(-50%, -50%)'
+    }}> {text}
+    </div>
+);
 
 class GoogleMaps extends Component {
 
@@ -75,10 +129,31 @@ class GoogleMaps extends Component {
             >
 
               <Marker
-                  lat={21.298872}
-                  lng={-157.817204}
-                  text={'Pick-Up Location'}
+                lat={24.298872}
+                lng={-157.817204}
+                text={"abc"}
+            />
+              <Marker1
+                  lat={21.998872}
+                  lng={-159.817204}
+                  text={"123"}
               />
+              <Marker2
+                  lat={21.298872}
+                  lng={-157.117204}
+                  text={"321"}
+              />
+              <Marker3
+                  lat={21.998872}
+                  lng={-157.117204}
+                  text={"1b3"}
+              />
+              <Marker4
+                  lat={21.298872}
+                  lng={-157.417204}
+                  text={"1c4"}
+              />
+
             </GoogleMapReact>
 
           </Grid.Column>
@@ -140,6 +215,7 @@ class GoogleMaps extends Component {
 GoogleMaps.propTypes = {
   drivers: PropTypes.array.isRequired,
   reviews: PropTypes.array.isRequired,
+  markers: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -147,9 +223,11 @@ export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe('Drivers');
   const subscription2 = Meteor.subscribe('Reviews');
+  const subscription3 = Meteor.subscribe('Markers');
   return {
     drivers: Drivers.find({}).fetch(),
     reviews: Review.find({}).fetch(),
-    ready: subscription.ready() && subscription2.ready(),
+    markers: Markers.find({}).fetch(),
+    ready: subscription.ready() && subscription2.ready() && subscription3.ready(),
   };
 })(GoogleMaps);
