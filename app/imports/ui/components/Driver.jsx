@@ -31,6 +31,8 @@ class Driver extends React.Component {
             <Card.Meta>Drives a {this.props.driver.carYear} {this.props.driver.carMake}</Card.Meta>
             <Card.Meta>Registation: {this.props.driver.licensePlate}</Card.Meta>
             <Card.Meta>Car type: {this.props.driver.carType}</Card.Meta>
+            <Card.Meta>I am going to: {this.props.driver.destination}</Card.Meta>
+
 
             <Button basic centered='true' style={{margin:'8px 0em'}} color='grey'>
               <Link to={`/edit/${this.props.driver._id}`}>Edit</Link>
@@ -50,7 +52,7 @@ class Driver extends React.Component {
             <Confirm
                 open={this.state.open}
                 onCancel={this.close}
-                onConfirm={this.close && this.delete}
+                onConfirm={this.delete}
             />
           </Card.Content>
         </Card>
