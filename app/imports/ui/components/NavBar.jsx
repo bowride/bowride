@@ -16,7 +16,7 @@ class NavBar extends React.Component {
             <Header inverted as='h1'><Image size='massive' centered src="/images/bowride-logo.png"/>BowRide</Header>
           </Menu.Item>
           {this.props.currentUser ? (
-              [<Menu.Item as={NavLink} activeClassName="active" exact to="/listDrivers" key='addContacts'>I want to Ride  <Icon name='street view' size='large'/></Menu.Item>,
+              [<Menu.Item as={NavLink} activeClassName="active" exact to="/listDrivers" key='listDriver'>I want to Ride  <Icon name='street view' size='large'/></Menu.Item>,
                 <Menu.Item as={NavLink} activeClassName="active" exact to="/add_driverinfo" key='add'>I want to Drive  <Icon name='car' size='large'/></Menu.Item>,
                 <Menu.Item as={NavLink} activeClassName="active" exact to="/map" key='map'>Google Maps<Icon name='map outline' size='large'/></Menu.Item>,
                 <Menu.Item as={NavLink} activeClassName="" exact to="/profile" key='profile'> My Profile  <Icon name='user outline' size='large'/></Menu.Item>]
