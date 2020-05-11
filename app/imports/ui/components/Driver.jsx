@@ -48,11 +48,11 @@ class Driver extends React.Component {
             <AddReview owner={this.props.driver.owner} driverId={this.props.driver._id}/>
           </Card.Content>
           <Card.Content extra>
-            <button className="ui button" onClick={this.open}>Delete</button>
+            <Button className="ui button" onClick={this.open}>Delete</Button>
             <Confirm
                 open={this.state.open}
                 onCancel={this.close}
-                onConfirm={this.close && this.delete}
+                onConfirm={this.delete}
             />
           </Card.Content>
         </Card>
