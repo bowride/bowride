@@ -21,6 +21,8 @@ class ListDrivers extends React.Component {
     const { carType, destination, seats } = this.state
     this.setState({ carType: carType, destination: destination, seats: seats })
   }
+
+
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
@@ -114,7 +116,7 @@ export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe('Drivers');
   const subscription2 = Meteor.subscribe('Reviews');
-  const search={carType:'van', destination:''}
+  const search={carType:this.props.carType, destination:''}
 
   if (search.carType=='' && search.destination=='' ){
     search1 = {};
