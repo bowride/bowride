@@ -35,7 +35,13 @@ const DriverSchema = new SimpleSchema({
         allowedValues: [2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009 ],
         defaultValue: '2020',
         required: true,
-    }, 
+    },
+    destination:{
+      type: String,
+      allowedValues: ['UH Campus', 'Manoa', 'Kaimuki', 'Palolo', 'Kahala', 'Ala Moana'],
+      defaultValue: 'UH Campus',
+      required: true,
+    },
     owner: {
         type: String,
         required: false,
