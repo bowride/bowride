@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Card, Container, Header, Loader } from 'semantic-ui-react';
+import { Card, Container, Header, Loader, Segment, Icon, Image } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Driver from '../components/Driver';
@@ -18,12 +18,30 @@ class MyProfile extends React.Component {
   renderPage() {
     return (
         <Container>
-        <Header as="h2" textAlign="center"><br/><br/>You have not Driven Yet, Nothing to see here!<br/><br/><br/></Header>
-        <Card.Group>
-          {this.props.drivers.map((driver, index) => <Driver key={index} driver={driver}
-                                                                Drivers={Drivers}
-                       reviews={this.props.reviews.filter(review => (review.driverId === driver._id))}/>)}
-        </Card.Group>
+          <Segment fluid raised textAlign='center' style={{ padding: '1.8em 0em' , minHeight: '270', backgroundColor: 'green'}} vertical>
+          <Icon.Group size='large'>
+            <Image
+              inverted 
+              src="/images/profile_picture.png" 
+              size='small' 
+              circular
+              centered
+              verticalAlign='bottom'
+              style={{
+                  marginBottom: 0,
+                  marginTop: '1.8em'
+              }}
+            />
+            <Icon link corner size='huge' name='pencil alternate' color='white'/>
+          </Icon.Group>
+          </Segment>
+          <Segment textAlign="left" style={{ padding: '0em 0em', minHeight: 500 }} vertical>
+            <Card.Group doubling itemsPerRow={1}>
+              {this.props.drivers.map((driver, index) => <Driver key={index} driver={driver}
+                                                                    Drivers={Drivers}
+                          reviews={this.props.reviews.filter(review => (review.driverId === driver._id))}/>)}
+            </Card.Group>
+          </Segment>
         </Container>
     );
   }

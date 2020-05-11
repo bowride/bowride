@@ -37,6 +37,62 @@ const Marker = ({text}) => (
     }}> {text}
     </div>
 );
+const Marker1 = ({text}) => (
+    <div style={{
+      color: 'white',
+      background: 'red',
+      padding: '15px 10px',
+      display: 'inline-flex',
+      textAlign: 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: '50%',
+      transform: 'translate(-50%, -50%)'
+    }}> {text}
+    </div>
+);
+const Marker2 = ({text}) => (
+    <div style={{
+      color: 'white',
+      background: 'red',
+      padding: '15px 10px',
+      display: 'inline-flex',
+      textAlign: 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: '50%',
+      transform: 'translate(-50%, -50%)'
+    }}> {text}
+    </div>
+);
+const Marker3 = ({text}) => (
+    <div style={{
+      color: 'white',
+      background: 'red',
+      padding: '15px 10px',
+      display: 'inline-flex',
+      textAlign: 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: '50%',
+      transform: 'translate(-50%, -50%)'
+    }}> {text}
+    </div>
+);
+const Marker4 = ({text}) => (
+    <div style={{
+      color: 'white',
+      background: 'red',
+      padding: '15px 10px',
+      display: 'inline-flex',
+      textAlign: 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: '50%',
+      transform: 'translate(-50%, -50%)'
+    }}> {text}
+    </div>
+);
 
 class GoogleMaps extends Component {
 
@@ -73,9 +129,29 @@ class GoogleMaps extends Component {
             >
 
               <Marker
-                  lat={this.props.markers.lat}
-                  lng={this.props.markers.lng}
-                  text={this.props.markers.text}
+                lat={24.298872}
+                lng={-157.817204}
+                text={"abc"}
+            />
+              <Marker1
+                  lat={21.998872}
+                  lng={-159.817204}
+                  text={"123"}
+              />
+              <Marker2
+                  lat={21.298872}
+                  lng={-157.117204}
+                  text={"321"}
+              />
+              <Marker3
+                  lat={21.998872}
+                  lng={-157.117204}
+                  text={"1b3"}
+              />
+              <Marker4
+                  lat={21.298872}
+                  lng={-157.417204}
+                  text={"1c4"}
               />
 
             </GoogleMapReact>

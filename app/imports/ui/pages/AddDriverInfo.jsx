@@ -28,7 +28,7 @@ class AddDriverInfo extends React.Component {
   render() {
     let fRef = null;
     return (
-        <Grid container centered>
+        <Grid container centered style={{ padding: '1.5em 0em'}}>
           <Grid.Column mobile={16} tablet={8} computer={8}>
             <Header as="h2" textAlign="center">Personal information and car details</Header>
             <Header disabled as = 'h4' textAlign="center">Only name and car make are visible before booking</Header>
