@@ -26,7 +26,7 @@ class Driver extends React.Component {
     return (
         <Card centered textAlign="center">
           <Card.Content textAlign="center">
-            <Card.Header size='large' Style={{fontSize:'20px'}}>{this.props.driver.firstName} {this.props.driver.lastName}</Card.Header>
+            <Card.Header size='large' style={{fontSize:'20px'}}>{this.props.driver.firstName} {this.props.driver.lastName}</Card.Header>
             <Divider hidden/>
             <Card.Meta>Drives a {this.props.driver.carYear} {this.props.driver.carMake}</Card.Meta>
             <Card.Meta>Registation: {this.props.driver.licensePlate}</Card.Meta>

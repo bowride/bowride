@@ -18,10 +18,9 @@ class MyProfile extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Segment fluid raised textAlign='center' style={{ padding: '1.8em 0em' , minHeight: '270', backgroundColor: 'green'}} vertical>
+          <Segment raised textAlign='center' style={{ padding: '1.8em 0em' , minHeight: '270', backgroundColor: 'green'}} vertical>
           <Icon.Group size='large'>
             <Image
-              inverted 
               src="/images/profile_picture.png" 
               size='small' 
               circular
@@ -32,7 +31,7 @@ class MyProfile extends React.Component {
                   marginTop: '1.8em'
               }}
             />
-            <Icon link corner size='huge' name='pencil alternate' color='white'/>
+            <Icon link corner className='ui huge white pencil alternate' />
           </Icon.Group>
           </Segment>
           <Segment textAlign="left" style={{ padding: '0em 0em', minHeight: 500 }} vertical>
