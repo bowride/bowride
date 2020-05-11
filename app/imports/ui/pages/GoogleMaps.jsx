@@ -6,7 +6,6 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from "meteor/meteor";
 import { Drivers } from '../../api/driver/Driver';
 import { Review } from '../../api/Review/Review';
-import { Markers } from '../../api/marker/Marker';
 import Driver from '../components/Driver';
 // map options/design map
 function createMapOptions(maps) {
@@ -215,7 +214,6 @@ class GoogleMaps extends Component {
 GoogleMaps.propTypes = {
   drivers: PropTypes.array.isRequired,
   reviews: PropTypes.array.isRequired,
-  markers: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -223,11 +221,9 @@ export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe('Drivers');
   const subscription2 = Meteor.subscribe('Reviews');
-  const subscription3 = Meteor.subscribe('Markers');
   return {
     drivers: Drivers.find({}).fetch(),
     reviews: Review.find({}).fetch(),
-    markers: Markers.find({}).fetch(),
-    ready: subscription.ready() && subscription2.ready() && subscription3.ready(),
+    ready: subscription.ready() && subscription2.ready(),
   };
 })(GoogleMaps);

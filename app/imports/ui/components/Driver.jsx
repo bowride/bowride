@@ -24,7 +24,7 @@ class Driver extends React.Component {
 
   render() {
     return (
-        <Card centered textAlign="center">
+        <Card centered>
           <Card.Content textAlign="center">
             <Card.Header size='large' style={{fontSize:'20px'}}>{this.props.driver.firstName} {this.props.driver.lastName}</Card.Header>
             <Divider hidden/>
@@ -32,7 +32,7 @@ class Driver extends React.Component {
             <Card.Meta>Registation: {this.props.driver.licensePlate}</Card.Meta>
             <Card.Meta>Car type: {this.props.driver.carType}</Card.Meta>
 
-            <Button basic centered style={{margin:'8px 0em'}} color='grey'> 
+            <Button basic centered='true' style={{margin:'8px 0em'}} color='grey'>
               <Link to={`/edit/${this.props.driver._id}`}>Edit</Link>
             </Button>
             
@@ -46,7 +46,7 @@ class Driver extends React.Component {
             <AddReview owner={this.props.driver.owner} driverId={this.props.driver._id}/>
           </Card.Content>
           <Card.Content extra>
-            <button className="ui button" onClick={this.open}>Delete</button>
+            <Button className="ui button" onClick={this.open}>Delete</Button>
             <Confirm
                 open={this.state.open}
                 onCancel={this.close}

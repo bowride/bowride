@@ -4,7 +4,6 @@ import { Drivers } from '../../api/driver/Driver';
 import { Contacts } from '../../api/contact/Contacts';
 import { Note } from '../../api/note/Note';
 import { Review } from '../../api/Review/Review';
-import { Markers } from '../../api/marker/Marker';
 /** This subscription publishes only the documents associated with the logged in user */
 
 /** ---------Drivers--------- */
@@ -50,13 +49,6 @@ Meteor.publish('Reviews', function publish() {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
     return Review.find({ owner: username });
-  }
-  return this.ready();
-});
-
-Meteor.publish('Markers', function publish() {
-  if (this.userId) {
-    return Markers.find();
   }
   return this.ready();
 });
