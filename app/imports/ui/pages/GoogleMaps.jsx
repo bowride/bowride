@@ -39,7 +39,7 @@ const Marker = ({text}) => (
 const Marker1 = ({text}) => (
     <div style={{
       color: 'white',
-      background: 'red',
+      background: 'blue',
       padding: '15px 10px',
       display: 'inline-flex',
       textAlign: 'center',
@@ -53,7 +53,7 @@ const Marker1 = ({text}) => (
 const Marker2 = ({text}) => (
     <div style={{
       color: 'white',
-      background: 'red',
+      background: 'purple',
       padding: '15px 10px',
       display: 'inline-flex',
       textAlign: 'center',
@@ -67,7 +67,7 @@ const Marker2 = ({text}) => (
 const Marker3 = ({text}) => (
     <div style={{
       color: 'white',
-      background: 'red',
+      background: 'green',
       padding: '15px 10px',
       display: 'inline-flex',
       textAlign: 'center',
@@ -81,7 +81,7 @@ const Marker3 = ({text}) => (
 const Marker4 = ({text}) => (
     <div style={{
       color: 'white',
-      background: 'red',
+      background: 'orange',
       padding: '15px 10px',
       display: 'inline-flex',
       textAlign: 'center',
@@ -97,7 +97,7 @@ class GoogleMaps extends Component {
 
   // onClick event for markers
   _onChildClick = (key, childProps) => {
-    alert("You clicked the marker, stay tuned for updates")
+    alert("You clicked the marker: "+ key)
   };
 
   render() {
