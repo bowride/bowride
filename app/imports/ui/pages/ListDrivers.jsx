@@ -4,6 +4,7 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import {Card, Container, Loader, Divider, Button, Header, Form, Segment, Rail } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import Driver from '../components/Driver';
 import { Drivers } from '../../api/driver/Driver';
@@ -68,6 +69,7 @@ class ListDrivers extends React.Component {
                       placeholder='landmark, or address' 
                       options={locationOptions}
                       onChange={this.handleChange}/>
+
                     <Form.Select 
                       id='type' 
                       label='Car Type' 
@@ -76,6 +78,7 @@ class ListDrivers extends React.Component {
                       placeholder='Sedan' 
                       options = {cartypeOptions}
                       onChange={this.handleChange}/>
+                      
                     <Form.Select 
                       id='seats' 
                       label='Seats Required' 
@@ -111,7 +114,7 @@ export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe('Drivers');
   const subscription2 = Meteor.subscribe('Reviews');
-  const search={carType:'', destination:''}
+  const search={carType:'van', destination:''}
 
   if (search.carType=='' && search.destination=='' ){
     search1 = {};
@@ -126,7 +129,7 @@ export default withTracker(() => {
   }
 
   return {
-    drivers: Drivers.find({},{sort: {destination:1,firstName:1}}).fetch(),
+    drivers: Drivers.find(search1,{sort: {destination:1,firstName:1}}).fetch(),
     reviews: Review.find({}).fetch(),
     ready: subscription.ready() && subscription2.ready(),
   };
