@@ -188,17 +188,17 @@ class GoogleMaps extends Component {
 
           <Grid.Column>
             <Dropdown
-                  style={{fontSize:'25px'}}
+                  style={{fontSize:'25px', textAlign:'center'}}
                   placeholder='Select Destination'
-                  fluid
                   selection
+                  fluid
                   options={dropDownOptions}
               />
 
 
             <Grid rows={2} className='ui center aligned two row grid' style={{ height: '90vh' }}>
 
-              <Grid.Row>
+              <Grid.Row >
 
                 <Grid rows={2} className='ui center aligned two row grid' style={{ height: '40vh' }}>
 
