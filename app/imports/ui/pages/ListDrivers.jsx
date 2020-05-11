@@ -1,8 +1,8 @@
 
 /**----------------------------------------------------------------- */
-import React from 'react';
+import React , { useState, useEffect } from 'react';
 import { Meteor } from 'meteor/meteor';
-import {Card, Container, Loader, Divider, Button, Header, Form, Segment, Rail } from 'semantic-ui-react';
+import {Card, Container, Loader, Divider, Header, Form, Segment, Rail } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
@@ -17,10 +17,11 @@ class ListDrivers extends React.Component {
 
   handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
-  handleSubmit = () => {
+ /**  handleSubmit = () => {
     const { carType, destination, seats } = this.state
     this.setState({ carType: carType, destination: destination, seats: seats })
   }
+  */
 
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
@@ -112,11 +113,13 @@ ListDrivers.propTypes = {
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+
+const input = new ReactiveVar(undefined);
 export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe('Drivers');
   const subscription2 = Meteor.subscribe('Reviews');
-  const search={carType:this.props.carType, destination:''}
+  const search={carType:'van', destination:''}
 
   if (search.carType=='' && search.destination=='' ){
     search1 = {};
