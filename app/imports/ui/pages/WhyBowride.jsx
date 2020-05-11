@@ -6,6 +6,7 @@ class WhyBowride extends React.Component {
   render() {
     return (
         <Container>
+          <p><br/></p>
           <h1>Why BowRide?</h1>
           <h2>We want to give you the best Ride-sharing experience possible</h2>
           <p>
@@ -18,7 +19,14 @@ class WhyBowride extends React.Component {
             Manoa can be a mess, especially the Stan Sheriff Parking Structure.  BowRide is here to help
             with the morning madness, find a ride, find someone to give you a ride, the more people ride sharing
             leads to less cars on the road, which is not only good for parking, but good on the environment!
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
           </p>
+
 
         </Container>
 

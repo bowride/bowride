@@ -37,6 +37,7 @@ class EditDriver extends React.Component {
     return (
         <Grid container centered>
           <Grid.Column>
+            <p><br/></p>
             <Header as="h2" textAlign="center">Edit Driver Profile</Header>
             <AutoForm schema={DriverSchema} onSubmit={data => this.submit(data)} model={this.props.doc}>
               <Segment>

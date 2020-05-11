@@ -6,6 +6,7 @@ class Safety extends React.Component {
   render() {
     return (
         <Container>
+          <p><br/></p>
           <h1>Safety is our Top Priority</h1>
           <h2>If you don't feel safe, cancel your trip.</h2>
           <p>
@@ -28,6 +29,10 @@ class Safety extends React.Component {
             of these reviews, fellow students ratings are there to help your decision in choosing a person to ride with.
             <br/>
             Give a review after your ride is over, it can go a long way in helping a fellow BowRide user!
+            <br/>
+            <br/>
+            <br/>
+
           </p>
         </Container>
 
