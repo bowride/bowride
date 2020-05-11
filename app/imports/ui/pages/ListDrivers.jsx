@@ -92,7 +92,7 @@ class ListDrivers extends React.Component {
                       onChange={this.handleChange}/>
                 </Form.Group>
             </Form>
-            <Header disabled>{destination}  {carType}</Header>
+            <Header disabled as ='h4'>{destination}  {carType}</Header>
             <Divider hidden/>
             <Card.Group doubling itemsPerRow={3}>
               {this.props.drivers.map((driver, index) => <Driver key={index} driver={driver}
@@ -119,7 +119,7 @@ export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe('Drivers');
   const subscription2 = Meteor.subscribe('Reviews');
-  const search={carType:'van', destination:''}
+  const search={carType:'', destination:''}
 
   if (search.carType=='' && search.destination=='' ){
     search1 = {};
