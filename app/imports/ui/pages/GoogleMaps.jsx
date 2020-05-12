@@ -166,7 +166,7 @@ class GoogleMaps extends Component {
 
                   <Grid.Row>
                     <Header as='h1' style={{ textAlign: 'center' }}>
-                      Click the markers to see drivers and riders at each stop
+                      Drivers
                     </Header>
                   </Grid.Row>
 
