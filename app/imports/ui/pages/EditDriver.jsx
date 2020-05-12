@@ -21,8 +21,8 @@ class EditDriver extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { firstName, lastName, carMake, carType, licensePlate, color, carYear, destination, _id } = data;
-    Drivers.update(_id, { $set: { firstName, lastName, carMake, carType, licensePlate, color, carYear, destination  } }, (error) => (error ?
+    const { firstName, lastName, carMake, carType, image, licensePlate, color, carYear, destination, _id } = data;
+    Drivers.update(_id, { $set: { firstName, lastName, image, carMake, carType, licensePlate, color, carYear, destination  } }, (error) => (error ?
         swal('Error', error.message, 'error') :
         swal('Success', 'Item updated successfully', 'success')));
   }
@@ -43,6 +43,7 @@ class EditDriver extends React.Component {
               <Segment>
                 <TextField name='firstName'/>
                 <TextField name='lastName'/>
+                <TextField name='image'/>
                 <SelectField name = 'carMake'/>
                 <SelectField name = 'carType'/>
                 <TextField name = 'color'/>

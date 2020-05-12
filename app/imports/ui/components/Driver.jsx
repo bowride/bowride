@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 import Review from './Reviews';
 import AddReview from './AddReview';
+import Rating from 'semantic-ui-react/dist/commonjs/modules/Rating';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Driver extends React.Component {
@@ -36,7 +37,6 @@ class Driver extends React.Component {
             <Button basic centered='true' style={{margin:'8px 0em'}} color='grey'>
               <Link to={`/edit/${this.props.driver._id}`}>Edit</Link>
             </Button>
-            
           </Card.Content>
           <Card.Content extra>
             <Feed>

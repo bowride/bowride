@@ -9,6 +9,10 @@ const Drivers = new Mongo.Collection('Drivers');
 const DriverSchema = new SimpleSchema({
     firstName: String,
     lastName: String,
+  image: {
+    type: String,
+    required: false,
+  },
     referralCode: {
         type: String,
         required: false,

@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import Driver from '../components/Driver';
 import { Drivers } from '../../api/driver/Driver';
 import { Review } from '../../api/Review/Review';
+import { Link } from 'react-router-dom';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class MyProfile extends React.Component {
@@ -21,7 +22,7 @@ class MyProfile extends React.Component {
           <Segment raised textAlign='center' style={{ padding: '1.8em 0em' , minHeight: '270', backgroundColor: 'green'}} vertical>
           <Icon.Group size='large'>
             <Image
-              src="/images/profile_picture.png" 
+              src="/images/profile_picture.png"
               size='small' 
               circular
               centered
@@ -31,7 +32,9 @@ class MyProfile extends React.Component {
                   marginTop: '1.8em'
               }}
             />
-            <Icon link corner className='ui huge white pencil alternate' />
+            <Icon link corner className='ui huge white pencil alternate'>
+              <Link to={`/edit/${this.props.drivers._id}`}>Edit</Link>
+            </Icon>
           </Icon.Group>
           </Segment>
           <Segment textAlign="left" style={{ padding: '0em 0em', minHeight: 500 }} vertical>
