@@ -7,14 +7,14 @@ import { Meteor } from "meteor/meteor";
 import { Drivers } from '../../api/driver/Driver';
 import { Review } from '../../api/Review/Review';
 import Driver from '../components/Driver';
-import Dropdown from 'semantic-ui-react/dist/commonjs/modules/Dropdown';
+
 // map options/design map
 function createMapOptions(maps) {
   return {
     panControl: true,
     mapTypeControl: false,
     scrollwheel: true,
-    onClick: true,
+    onClick: false,
     styles: [{ stylers: [{ 'saturation': 100 }, { 'gamma': 1.0 }, { 'lightness': 4 }, { 'visibility': 'on' }] }]
   }
 }
@@ -91,44 +91,15 @@ const Marker4 = ({text}) => (
     </div>
 );
 
-const dropDownOptions = [
-  {
-    key: 'UH Campus',
-    text: 'UH Campus',
-    value: 'UH Campus',
-  },
-  {
-    key: 'Manoa',
-    text: 'Manoa',
-    value: 'Manoa',
-  },
-  {
-    key: 'Kaimuki',
-    text: 'Kaimuki',
-    value: 'Kaimuki',
-  },
-  {
-    key: 'Palolo',
-    text: 'Palolo',
-    value: 'Palolo',
-  },
-  {
-    key: 'Ala Moana',
-    text: 'Ala Moana',
-    value: 'Ala Moana',
-  },
-  {
-    key: 'Kahala',
-    text: 'Kahala',
-    value: 'Kahala',
-  },
-]
 
 class GoogleMaps extends Component {
 
+
+
   // onClick event for markers
   _onChildClick = (key, childProps) => {
-    alert("You clicked the marker: "+ key)
+    alert("You clicked the marker: "+ childProps.text)
+
   };
 
   render() {
@@ -159,27 +130,27 @@ class GoogleMaps extends Component {
               <Marker
                 lat={21.301730}
                 lng={ -157.814078}
-                text={"abc"}
+                text={"Manoa \n Drivers:" + _.where(this.props.drivers, {destination: "Manoa"}).length}
             />
               <Marker1
                   lat={21.299211}
                   lng={-157.815593}
-                  text={"123"}
+                  text={"Ala Moana \n Drivers:" + _.where(this.props.drivers, {destination: "Ala Moana"}).length}
               />
               <Marker2
                   lat={21.296022}
                   lng={-157.819060}
-                  text={"321"}
+                  text={"Kaimuki\n Drivers:" + _.where(this.props.drivers, {destination: "Kaimuki"}).length}
               />
               <Marker3
                   lat={21.298799}
                   lng={-157.817484}
-                  text={"1b3"}
+                  text={"Palolo\n Drivers:" + _.where(this.props.drivers, {destination: "Palolo"}).length}
               />
               <Marker4
                   lat={21.300482}
                   lng={-157.820724}
-                  text={"1c4"}
+                  text={"Kahala\n Drivers:" + _.where(this.props.drivers, {destination: "Kahala"}).length}
               />
 
             </GoogleMapReact>
@@ -187,20 +158,11 @@ class GoogleMaps extends Component {
           </Grid.Column>
 
           <Grid.Column>
-            <Dropdown
-                  style={{fontSize:'25px', textAlign:'center'}}
-                  placeholder='Select Destination'
-                  selection
-                  fluid
-                  options={dropDownOptions}
-              />
-
-
             <Grid rows={2} className='ui center aligned two row grid' style={{ height: '90vh' }}>
 
               <Grid.Row >
 
-                <Grid rows={2} className='ui center aligned two row grid' style={{ height: '40vh' }}>
+                <Grid rows={1} className='ui center aligned grid' style={{ height: '40vh' }}>
 
                   <Grid.Row>
                     <Header as='h1' style={{ textAlign: 'center' }}>
@@ -211,35 +173,20 @@ class GoogleMaps extends Component {
                   <Grid.Row>
                     <Segment style={{ overflow: 'auto', maxHeight: '50vh' }}>
                       <Card.Group>
-                        {this.props.drivers.map((driver, index) => <Driver key={index} driver={driver}
-                                                                           Drivers={Drivers}
-                                                                           reviews={this.props.reviews.filter(review => (review.driverId === driver._id))}/>)}
+                        {this.props.drivers.map((driver, index) =>
+                            <Driver
+                                key={index}
+                                driver={driver}
+                                Drivers={Drivers}
+                                reviews={this.props.reviews.filter(review => (review.driverId === driver._id))}
+                            />)
+                        })}
                       </Card.Group>
                     </Segment>
                   </Grid.Row>
                 </Grid>
               </Grid.Row>
 
-              <Grid.Row>
-                <Grid rows={2} className='ui center aligned two row grid' style={{ height: '40vh' }}>
-
-                  <Grid.Row>
-                    <Header as='h1' style={{ textAlign: 'center' }}>
-                      Click the markers to see drivers and riders at each stop
-                    </Header>
-                  </Grid.Row>
-
-                  <Grid.Row>
-                    <Segment style={{ overflow: 'auto', maxHeight: '50vh' }}>
-                      <Card.Group>
-                        {this.props.drivers.map((driver, index) => <Driver key={index} driver={driver}
-                                                                           Drivers={Drivers}
-                                                                           reviews={this.props.reviews.filter(review => (review.driverId === driver._id))}/>)}
-                      </Card.Group>
-                    </Segment>
-                  </Grid.Row>
-                </Grid>
-              </Grid.Row>
             </Grid>
           </Grid.Column>
 
