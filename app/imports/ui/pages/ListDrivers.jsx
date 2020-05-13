@@ -50,6 +50,7 @@ class ListDrivers extends React.Component {
     ]
 
     return (
+        <Container style={{ width:'100vw', height:'80vh'}}>
         <Container style={{ padding: '1.5em 0em' }}>
           <Segment raised secondary>
             <Divider hidden/>
@@ -100,6 +101,7 @@ class ListDrivers extends React.Component {
                           reviews={this.props.reviews.filter(review => (review.driverId === driver._id))}/>)}
             </Card.Group>
           </Segment>
+        </Container>
         </Container>
     );
   }

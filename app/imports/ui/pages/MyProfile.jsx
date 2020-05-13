@@ -18,6 +18,7 @@ class MyProfile extends React.Component {
 
   renderPage() {
     return (
+        <Container style={{width:'100vw', height:'80vh'}}>
         <Container>
           <Segment raised textAlign='center' style={{ padding: '1.8em 0em' , minHeight: '270', backgroundColor: 'green'}} vertical>
           <Icon.Group size='large'>
@@ -44,6 +45,7 @@ class MyProfile extends React.Component {
                           reviews={this.props.reviews.filter(review => (review.driverId === driver._id))}/>)}
             </Card.Group>
           </Segment>
+        </Container>
         </Container>
     );
   }

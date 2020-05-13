@@ -90,6 +90,20 @@ const Marker4 = ({text}) => (
     }}> {text}
     </div>
 );
+const Marker5 = ({text}) => (
+    <div style={{
+      color: 'white',
+      background: 'gray',
+      padding: '15px 10px',
+      display: 'inline-flex',
+      textAlign: 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: '50%',
+      transform: 'translate(-50%, -50%)'
+    }}> {text}
+    </div>
+);
 
 
 class GoogleMaps extends Component {
@@ -98,7 +112,8 @@ class GoogleMaps extends Component {
 
   // onClick event for markers
   _onChildClick = (key, childProps) => {
-    alert("You clicked the marker: "+ childProps.text)
+    alert("This is the pick up location for "+ childProps.id + "\n"
+    + "There is currently " + childProps.numDrivers + " driver(s).")
 
   };
 
@@ -113,11 +128,19 @@ class GoogleMaps extends Component {
         <Container  style={{
           height: '90vh',
           width: '100vw',
-          backgroundColor: 'green',
-          paddingLeft: '10px',
-          paddingRight: '10px'
+          aligned:'center',
+          backgroundColor: '#e2e2e2',
+          paddingTop:'10px',
+          paddingBottom:'10px'
         }}>
+          <Header style={{fontSize:'25px', textAlign:'center'}}>Click Markers For More details</Header>
 
+          <Container  style={{
+            height: '80vh',
+            width: '80vw',
+            aligned:'center',
+            paddingBottom:'30px'
+          }}>
 
             <GoogleMapReact
                 bootstrapURLKeys={{ key: 'AIzaSyDxXxFiIPFfY3-PdFOuEa9gR4hjICcpwZA' }}
@@ -131,30 +154,47 @@ class GoogleMaps extends Component {
                 lat={21.301730}
                 lng={ -157.814078}
                 text={"Manoa \n Drivers:" + _.where(this.props.drivers, {destination: "Manoa"}).length}
+                numDrivers={_.where(this.props.drivers, {destination: "Manoa"}).length}
+                id={"Manoa"}
             />
               <Marker1
                   lat={21.299211}
                   lng={-157.815593}
                   text={"Ala Moana \n Drivers:" + _.where(this.props.drivers, {destination: "Ala Moana"}).length}
+                  numDrivers={_.where(this.props.drivers, {destination: "Ala Moana"}).length}
+                  id={"Ala Moana"}
               />
               <Marker2
                   lat={21.296022}
                   lng={-157.819060}
                   text={"Kaimuki\n Drivers:" + _.where(this.props.drivers, {destination: "Kaimuki"}).length}
+                  numDrivers={_.where(this.props.drivers, {destination: "Kaimuki"}).length}
+                  id={"Kaimuki"}
               />
               <Marker3
                   lat={21.298799}
                   lng={-157.817484}
                   text={"Palolo\n Drivers:" + _.where(this.props.drivers, {destination: "Palolo"}).length}
+                  numDrivers={_.where(this.props.drivers, {destination: "Palolo"}).length}
+                  id={"Palolo"}
               />
               <Marker4
                   lat={21.300482}
                   lng={-157.820724}
                   text={"Kahala\n Drivers:" + _.where(this.props.drivers, {destination: "Kahala"}).length}
+                  numDrivers={_.where(this.props.drivers, {destination: "Kahala"}).length}
+                  id={"Kahala"}
+              />
+              <Marker5
+                  lat={21.298072}
+                  lng={-157.820241}
+                  text={"Waikiki\n Drivers:" + _.where(this.props.drivers, {destination: "Waikiki"}).length}
+                  numDrivers={_.where(this.props.drivers, {destination: "Waikiki"}).length}
+                  id={"Waikiki"}
               />
 
             </GoogleMapReact>
-
+          </Container>
         </Container>
     );
   }
@@ -163,17 +203,14 @@ class GoogleMaps extends Component {
 
 GoogleMaps.propTypes = {
   drivers: PropTypes.array.isRequired,
-  reviews: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
 export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe('Drivers');
-  const subscription2 = Meteor.subscribe('Reviews');
   return {
     drivers: Drivers.find({}).fetch(),
-    reviews: Review.find({}).fetch(),
-    ready: subscription.ready() && subscription2.ready(),
+    ready: subscription.ready()
   };
 })(GoogleMaps);
