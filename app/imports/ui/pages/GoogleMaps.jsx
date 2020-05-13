@@ -104,6 +104,20 @@ const Marker5 = ({text}) => (
     }}> {text}
     </div>
 );
+const Marker6 = ({text}) => (
+    <div style={{
+      color: 'white',
+      background: 'teal',
+      padding: '15px 10px',
+      display: 'inline-flex',
+      textAlign: 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: '50%',
+      transform: 'translate(-50%, -50%)'
+    }}> {text}
+    </div>
+);
 
 
 class GoogleMaps extends Component {
@@ -191,6 +205,13 @@ class GoogleMaps extends Component {
                   text={"Waikiki\n Drivers:" + _.where(this.props.drivers, {destination: "Waikiki"}).length}
                   numDrivers={_.where(this.props.drivers, {destination: "Waikiki"}).length}
                   id={"Waikiki"}
+              />
+              <Marker6
+                  lat={21.297472}
+                  lng={-157.815428}
+                  text={"Kapiolani\n Drivers:" + _.where(this.props.drivers, {destination: "Kapiolani"}).length}
+                  numDrivers={_.where(this.props.drivers, {destination: "Kapiolani"}).length}
+                  id={"Kapiolani"}
               />
 
             </GoogleMapReact>
