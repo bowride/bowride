@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Grid, Header, Loader, Segment } from 'semantic-ui-react';
+import { Card, Container, Grid, Header, Loader, Segment } from 'semantic-ui-react';
 import GoogleMapReact from 'google-map-react';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -110,14 +110,14 @@ class GoogleMaps extends Component {
   renderPage() {
     return (
 
-        <Grid columns={2} style={{
+        <Container  style={{
           height: '90vh',
           width: '100vw',
           backgroundColor: 'green',
           paddingLeft: '10px',
           paddingRight: '10px'
         }}>
-          <Grid.Column>
+
 
             <GoogleMapReact
                 bootstrapURLKeys={{ key: 'AIzaSyDxXxFiIPFfY3-PdFOuEa9gR4hjICcpwZA' }}
@@ -155,42 +155,7 @@ class GoogleMaps extends Component {
 
             </GoogleMapReact>
 
-          </Grid.Column>
-
-          <Grid.Column>
-            <Grid rows={2} className='ui center aligned two row grid' style={{ height: '90vh' }}>
-
-              <Grid.Row >
-
-                <Grid rows={1} className='ui center aligned grid' style={{ height: '40vh' }}>
-
-                  <Grid.Row>
-                    <Header as='h1' style={{ textAlign: 'center' }}>
-                      Drivers
-                    </Header>
-                  </Grid.Row>
-
-                  <Grid.Row>
-                    <Segment style={{ overflow: 'auto', maxHeight: '50vh' }}>
-                      <Card.Group>
-                        {this.props.drivers.map((driver, index) =>
-                            <Driver
-                                key={index}
-                                driver={driver}
-                                Drivers={Drivers}
-                                reviews={this.props.reviews.filter(review => (review.driverId === driver._id))}
-                            />)
-                        })}
-                      </Card.Group>
-                    </Segment>
-                  </Grid.Row>
-                </Grid>
-              </Grid.Row>
-
-            </Grid>
-          </Grid.Column>
-
-        </Grid>
+        </Container>
     );
   }
 
